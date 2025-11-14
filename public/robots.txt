@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Disallow internal and non-public routes
+Disallow: /admin/
+Disallow: /api/
+Disallow: /internal/
+Disallow: /drafts/
+
+# Sitemap locations
+Sitemap: https://gravitygrouprsa.co.za/sitemap.xml
+Sitemap: https://www.gravitygrouprsa.co.za/sitemap.xml
+
+# Crawling rules for Next.js
+# Prevent crawling of server-side rendering artifacts
+Disallow: /_next/
+Disallow: /static/
+Disallow: /server/
+
+# Prevent crawling search parameters (avoid duplicate pages)
+Disallow: /*?*
