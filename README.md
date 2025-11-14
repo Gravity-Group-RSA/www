@@ -1,102 +1,137 @@
-# www
+# Gravity Group RSA — Website Repository
 
-[![Deploy Status](https://img.shields.io/badge/deploy-active-success?style=for-the-badge)](https://gravitygrouprsa.co.za)
-[![React](https://img.shields.io/badge/React-18-blue?style=for-the-badge&logo=react)](https://reactjs.org/)
-[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
-
-Gravity Group RSA's public website - A modern, responsive web application built with React and TailwindCSS.
-
-## 🚀 Quick Start
-
-```bash
-# Clone the repository
-git clone https://github.com/Gravity-Group-RSA/www.git
-
-# Navigate to project directory
-cd www
-
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-```
-
-## 🛠️ Tech Stack
-
-- React 18
-- TailwindCSS
-- Lucide Icons
-- React Router
-- Vite
-
-## 📁 Project Structure
-
-```
-www/
-├── src/
-│   ├── components/
-│   ├── pages/
-│   ├── assets/
-│   ├── styles/
-│   └── App.jsx
-├── public/
-├── tailwind.config.js
-└── package.json
-```
-
-## 🔧 Development
-
-```bash
-# Run development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
-
-# Run tests
-npm run test
-```
-
-## 📦 Deployment
-
-The website is automatically deployed to production when changes are pushed to the main branch.
-
-```bash
-# Manual deployment (if needed)
-npm run build
-npm run deploy
-```
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📝 Environment Variables
-
-Create a `.env` file in the root directory:
-
-```env
-VITE_API_URL=your_api_url
-VITE_GA_TRACKING_ID=your_ga_id
-```
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Gravity Group RSA provides roadside assistance services including towing, locksmith support, battery jumpstarts, tyre changes, fuel delivery, courier solutions, and more.
+This repository contains the full source code for the company’s multi-page marketing website built with **Next.js 15**, **Tailwind CSS**, and **TypeScript**.
 
 ---
 
-<div align="center">
+## 🚀 Tech Stack
 
-For questions and support, contact [info@gravitygrouprsa.co.za](mailto:info@gravitygrouprsa.co.za)
+* **Framework:** Next.js 15 (App Router)
+* **Language:** TypeScript
+* **Styling:** Tailwind CSS
+* **Deployment:** Firebase Hosting / Vercel
+* **SEO:** Dynamic metadata, OpenGraph, robots.txt, sitemap.xml
+* **CI/CD:** GitHub Actions
 
-</div>
+---
+
+## 📂 Repository Structure
+
+```
+gravity-group-rsa/
+├── .github/workflows/deploy.yml
+├── public/
+│   ├── favicon.ico
+│   ├── robots.txt
+│   ├── sitemap.xml
+│   └── images/
+│       ├── hero/
+│       └── services/
+│
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   ├── about/page.tsx
+│   │   ├── contact/page.tsx
+│   │   └── services/
+│   │       ├── page.tsx
+│   │       └── [service]/page.tsx
+│   │
+│   ├── components/
+│   ├── lib/
+│   ├── styles/
+│   └── data/services.json
+│
+├── docs/
+│   ├── BRAND_GUIDE.md
+│   ├── DESIGN_NOTES.md
+│   └── WIREFRAMES/
+│
+├── tests/
+│
+├── .env.example
+├── package.json
+├── tailwind.config.js
+├── tsconfig.json
+└── next.config.js
+```
+
+---
+
+## 🛠️ Getting Started
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
+
+```bash
+npm run dev
+```
+
+Build for production:
+
+```bash
+npm run build
+npm start
+```
+
+---
+
+## 🌐 Deployment
+
+### Firebase Hosting
+
+```bash
+firebase deploy
+```
+
+### Vercel
+
+```bash
+vercel --prod
+```
+
+Both deployment targets are supported.
+Environment variables must be configured according to `.env.example`.
+
+---
+
+## 🧩 Services Architecture
+
+Each service (e.g., towing, locksmith, jumpstart) is rendered dynamically using:
+
+* `/src/data/services.json`
+* `/src/app/services/[service]/page.tsx`
+
+This makes content easy to scale without editing routes.
+
+---
+
+## 📑 SEO Setup
+
+* `robots.txt` allows all public pages, blocks internal routes
+* `sitemap.xml` lists all services and core pages
+* `og-image.png` provides high-quality link previews
+* Metadata handled via `lib/seo.ts`
+
+---
+
+## 🤝 Contributing
+
+1. Create a feature branch
+2. Commit changes with clear messages
+3. Open a Pull Request
+4. CI/CD will run build + lint checks automatically
+
+---
+
+## 📜 License
+
+This project is proprietary and owned by **Gravity Group RSA**.
+No redistribution or repurposing without written permission.
