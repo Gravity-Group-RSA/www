@@ -1,35 +1,30 @@
-import "./globals.css";
-import type { Metadata } from "next";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-
-export const metadata: Metadata = {
-  title: "Gravity Group RSA – Roadside Assistance",
-  description:
-    "Professional towing, locksmith, fuel delivery, tyre change, and jumpstart services across South Africa.",
-  keywords: [
-    "gravity group rsa",
-    "roadside assistance",
-    "towing",
-    "locksmith",
-    "jumpstart",
-    "tyre change",
-    "fuel delivery"
-  ]
-};
-
-export default function RootLayout({
-  children
-}: {
-  children: React.ReactNode;
-}) {
-  return (
-    <html lang="en">
-      <body className="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-200">
-        <Navbar />
-        <main className="min-h-screen">{children}</main>
-        <Footer />
-      </body>
-    </html>
-  );
-}
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "AutomotiveBusiness",
+      name: "Gravity Group RSA",
+      url: "https://gravitygrouprsa.co.za",
+      image: "https://gravitygrouprsa.co.za/og-image.png",
+      description:
+        "24/7 towing, locksmith, tyre change, fuel delivery and emergency roadside assistance across South Africa.",
+      telephone: "+27 82 630 0543",
+      areaServed: "South Africa",
+      openingHours: "Mo-Su 00:00-23:59",
+      serviceType: [
+        "Towing",
+        "Locksmith",
+        "Battery Jumpstart",
+        "Fuel Delivery",
+        "Tyre Change",
+        "Courier Services"
+      ],
+      sameAs: [
+        "https://www.facebook.com/",
+        "https://www.instagram.com/",
+        "https://wa.me/27826300543"
+      ]
+    })
+  }}
+/>
