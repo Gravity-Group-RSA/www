@@ -33,6 +33,12 @@ section {
   to { opacity: 1; }
 }
 
+@media (max-width: 640px) {
+  h1 { font-size: 1.9rem; line-height: 2.4rem; }
+  h2 { font-size: 1.6rem; }
+  section { padding: 3rem 1rem; }
+}
+
 /* Tailwind-safe custom utilities */
 @layer utilities {
   .container-padding {
