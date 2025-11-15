@@ -1,9 +1,22 @@
 /** @type {import('next').NextConfig} */
+const isGithubPages = process.env.GITHUB_PAGES === 'true';
+
+// GitHub Pages repo name
+const repoName = 'gravity-group-rsa';
+
 const nextConfig = {
   reactStrictMode: true,
 
-  // Enable URL-based imports for images & OG assets
+  // Required for GitHub Pages (static export)
+  output: 'export',
+
+  // Only apply basePath + assetPrefix on GitHub Pages builds
+  basePath: isGithubPages ? `/${repoName}` : '',
+  assetPrefix: isGithubPages ? `/${repoName}/` : '',
+
+  // GitHub Pages does not support Next/Image optimization
   images: {
+    unoptimized: true,
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [
       {
@@ -13,55 +26,44 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'www.gravitygrouprsa.co.za',
-      },
-    ],
+      }
+    ]
   },
 
-  // Allow Next.js App Router to serve robots.txt and sitemap.xml from /public
+  // GitHub Pages does not support Node.js server features
   experimental: {
     optimizeCss: true,
-    serverMinification: true,
-    typedRoutes: true,
+    typedRoutes: true
   },
 
-  // Security headers (helps with SEO + trust + Lighthouse scores)
+  // Security headers (safe for static hosting)
   async headers() {
     return [
       {
-        source: '/(.*)',
+        source: '/:path*',
         headers: [
-          {
-            key: 'X-Frame-Options',
-            value: 'SAMEORIGIN',
-          },
-          {
-            key: 'X-Content-Type-Options',
-            value: 'nosniff',
-          },
-          {
-            key: 'Referrer-Policy',
-            value: 'strict-origin-when-cross-origin',
-          },
+          { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
+          { key: 'X-Content-Type-Options', value: 'nosniff' },
+          { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
           {
             key: 'Permissions-Policy',
-            value:
-              'camera=(), microphone=(), geolocation=(), browsing-topics=()',
-          },
+            value: 'camera=(), microphone=(), geolocation=(), browsing-topics=()'
+          }
         ],
-      },
+      }
     ];
   },
 
-  // Redirects for canonical URLs (keeps SEO clean)
+  // Redirects still work for static export if paths resolve correctly
   async redirects() {
     return [
       {
         source: '/home',
         destination: '/',
-        permanent: true,
-      },
+        permanent: true
+      }
     ];
-  },
+  }
 };
 
 module.exports = nextConfig;
