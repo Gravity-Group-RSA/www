@@ -2,7 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
-body {
+/* Global Resets */
+html, body {
   scroll-behavior: smooth;
+  font-family: 'Inter', sans-serif;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Improve layout shifts */
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Better section spacing */
+section {
+  scroll-margin-top: 80px;
+}
+
+/* Smooth fade-in for all main sections */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* Tailwind-safe custom utilities */
+@layer utilities {
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+  .page-section {
+    @apply py-16 sm:py-24;
+  }
 }
