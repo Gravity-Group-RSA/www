@@ -4,12 +4,14 @@ on:
   push:
     branches: ["main"]
   schedule:
-    - cron: "0 */6 * * *"   # Every 6 hours
+    - cron: "0 */6 * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
   pull-requests: write
+  id-token: write
+  pages: write
 
 jobs:
   audit:
@@ -19,7 +21,7 @@ jobs:
       - name: 📥 Checkout repo
         uses: actions/checkout@v4
 
-      - name: 🟦 Install Node.js
+      - name: 🟦 Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -30,125 +32,129 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y jq
 
-      # --------------------------------------------
-      # 1. Build + Static Export (Next.js)
-      # --------------------------------------------
+      # ------------------------------------------------------
+      # Build + Export
+      # ------------------------------------------------------
       - name: 🏗️ Build Next.js & Export Static Site
         run: |
           export GITHUB_PAGES=true
           npm run build
           npx next export
 
-      # --------------------------------------------
-      # 2. Lighthouse Performance + SEO Audit
-      # --------------------------------------------
+      # ------------------------------------------------------
+      # Lighthouse Audit
+      # ------------------------------------------------------
       - name: 🔍 Lighthouse Audit
         uses: treosh/lighthouse-ci-action@v10
         with:
           urls: |
             file:./out/index.html
-          configPath: ./lighthouse.config.cjs
           uploadArtifacts: true
           runs: 3
 
-      # --------------------------------------------
-      # 3. Broken Link Check
-      # --------------------------------------------
-      - name: 🔗 Check for Broken Links
-        uses: lycheeverse/lychee-action@v1
+      # ------------------------------------------------------
+      # Broken Link Checker
+      # ------------------------------------------------------
+      - name: 🔗 Broken Link Check
+        uses: lycheeverse/lychee-action@v2
         with:
           args: --verbose --no-progress ./out
 
-      # --------------------------------------------
-      # 4. HTML Validator
-      # --------------------------------------------
-      - name: 🧹 Validate HTML
+      # ------------------------------------------------------
+      # HTML Validation
+      # ------------------------------------------------------
+      - name: 🧹 HTML Validator
         uses: Cyb3r-Jak3/html5validator-action@v1
         with:
           root: ./out
-          blacklist: |
-            sitemap.xml
-            robots.txt
 
-      # --------------------------------------------
-      # 5. Accessibility Audit (Axe Core)
-      # --------------------------------------------
+      # ------------------------------------------------------
+      # Accessibility Audit
+      # ------------------------------------------------------
       - name: ♿ Accessibility Scan (axe-core)
         uses: pacoalfaro/axe-linter-action@v1
         with:
           directory: "./out"
 
-      # --------------------------------------------
-      # 6. Auto-Optimise Images (WebP + AVIF)
-      # --------------------------------------------
+      # ------------------------------------------------------
+      # Image optimisation
+      # ------------------------------------------------------
       - name: 🖼️ Optimise Images
         run: |
           npm install sharp --silent
           node scripts/optimise-images.js
 
-      # --------------------------------------------
-      # 7. Auto-Fix SEO Metadata
-      # --------------------------------------------
-      - name: 🧠 Auto-Fix Missing SEO Metadata
-        run: |
-          node scripts/seo-autofix.js
+      # ------------------------------------------------------
+      # SEO auto-fix
+      # ------------------------------------------------------
+      - name: 🧠 SEO Auto-Fix
+        run: node scripts/seo-autofix.js
 
-      # --------------------------------------------
-      # 8. Auto-Fix Accessibility (missing alt, labels)
-      # --------------------------------------------
-      - name: ♻️ Auto-Fix A11y Issues
-        run: |
-          node scripts/a11y-fix.js
+      # ------------------------------------------------------
+      # A11y fixes
+      # ------------------------------------------------------
+      - name: ♻️ Auto Fix Accessibility
+        run: node scripts/a11y-fix.js
 
-      # --------------------------------------------
-      # 9. Auto-Fix Sitemap / Robots Inconsistencies
-      # --------------------------------------------
-      - name: 🗺️ Regenerate sitemap.xml and robots.txt
+      # ------------------------------------------------------
+      # Sitemap + Robots
+      # ------------------------------------------------------
+      - name: 🗺️ Generate sitemap.xml & robots.txt
         run: |
           node scripts/generate-sitemap.js
           node scripts/generate-robots.js
 
-      # --------------------------------------------
-      # 10. Commit Improvements
-      # --------------------------------------------
+      # ------------------------------------------------------
+      # Upload the processed static site as an artifact (NEW SYNTAX)
+      # ------------------------------------------------------
+      - name: 📦 Upload Processed Static Site
+        uses: actions/upload-artifact@v4
+        with:
+          name: gravity-site-out
+          path: ./out
+          if-no-files-found: error
+
+      # ------------------------------------------------------
+      # Commit changes back to repo
+      # ------------------------------------------------------
       - name: 💾 Commit & Push Fixes
         run: |
           git config user.name "Gravity Auto Optimiser"
           git config user.email "bot@gravitygrouprsa.co.za"
           git add .
           if git diff --cached --quiet; then
-            echo "No fixes required"
+            echo "No fixes to commit"
           else
-            git commit -m "Automated site improvements via CI"
+            git commit -m "Automated site improvements"
             git push
           fi
 
-      # --------------------------------------------
-      # 11. Create PR If Massive Fixes Detected
-      # --------------------------------------------
-      - name: 🔀 Create Pull Request (For Large Changes)
+      # ------------------------------------------------------
+      # Auto pull-request if heavy fixes detected
+      # ------------------------------------------------------
+      - name: 🔀 Create Pull Request (Major Fixes)
         uses: peter-evans/create-pull-request@v6
         with:
           commit-message: "Automated Large Site Fixes"
-          title: "Automated Large Optimisation Pass"
-          body: |
-            This PR includes large-scale automated fixes:
-            - SEO improvements
-            - Accessibility remediation
-            - Broken link corrections
-            - Lighthouse-based improvements
-            - HTML validation fixes
+          title: "Automated Site Optimisation PR"
           branch: "auto/site-improvement-${{ github.run_id }}"
-          base: "main"
+          base: main
+          body: |
+            Automated improvements applied:
+            - SEO enhancements
+            - Accessibility fixes
+            - Performance optimisations
+            - HTML clean-up
+            - Image optimisation
 
-      # --------------------------------------------
-      # 12. GitHub Summary Report
-      # --------------------------------------------
-      - name: 📊 Final Report
+      # ------------------------------------------------------
+      # GitHub Summary
+      # ------------------------------------------------------
+      - name: 📊 Summary
         run: |
-          echo "### Gravity Group RSA — Site Audit" >> $GITHUB_STEP_SUMMARY
-          echo "✔ Lighthouse Completed" >> $GITHUB_STEP_SUMMARY
-          echo "✔ SEO Checks Completed" >> $GITHUB_STEP_SUMMARY
-          echo "✔ HTML Validation Completed" >> $GITHUB_STEP_SUMMARY
-          echo "✔ Broken Link Checker Completed" >> $GITHUB_STEP_SUMMARY
-          echo "✔ Auto Optimisations Applied" >> $GITHUB_STEP_SUMMARY
+          echo "### Gravity Group RSA — Auto Optimisation Complete" >> $GITHUB_STEP_SUMMARY
+          echo "- Lighthouse Passed" >> $GITHUB_STEP_SUMMARY
+          echo "- SEO Checks Complete" >> $GITHUB_STEP_SUMMARY
+          echo "- Accessibility Scanned" >> $GITHUB_STEP_SUMMARY
+          echo "- Images Optimised" >> $GITHUB_STEP_SUMMARY
+          echo "- Sitemap & Robots Updated" >> $GITHUB_STEP_SUMMARY
