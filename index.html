@@ -2,117 +2,144 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Viewport -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Page Title -->
-  <title>Gravity Group RSA — 24/7 Roadside Assistance</title>
-
-  <!-- Description -->
-  <meta name="description" content="24/7 towing, locksmith, tyre change, battery jumpstart, courier and roadside assistance services across South Africa. Fast, affordable and reliable support.">
-
-  <!-- Keywords -->
-  <meta name="keywords" content="towing, roadside assistance, locksmith, tyre change, battery jumpstart, fuel delivery, tow truck, South Africa towing">
-
-  <!-- Favicon -->
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-
-  <!-- OpenGraph -->
-  <meta property="og:title" content="Gravity Group RSA — Roadside Assistance">
-  <meta property="og:description" content="Fast and reliable towing, locksmith, tyre change, fuel delivery and emergency roadside assistance across South Africa.">
-  <meta property="og:image" content="https://gravitygrouprsa.co.za/og-image.png">
-  <meta property="og:url" content="https://gravitygrouprsa.co.za">
+  <title>Gravity Group RSA | 24/7 Roadside Assistance</title>
+  <meta name="description" content="Gravity Group RSA provides professional 24/7 roadside assistance services across South Africa, including towing, jumpstarts, lockouts, tyre changes, fuel delivery and courier solutions.">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-o8TvqnMvUJ9qJbB+oiX//SfjUvxyjE1hBWYK6YvYGwm/dKk07RMGKXJ9+DiDaGR1lBTtPl8uDJBJjtyvsK2JDg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Open Graph metadata -->
+  <meta property="og:title" content="Gravity Group RSA | 24/7 Roadside Assistance">
+  <meta property="og:description" content="Get back on the road with Gravity Group RSA. From emergency towing to locksmith support and fuel delivery, our experienced team is ready to help.">
+  <meta property="og:image" content="https://source.unsplash.com/1200x630/?tow-truck,roadside-assistance">
   <meta property="og:type" content="website">
-
-  <!-- Preconnect for performance -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <!-- Basic fallback styles to avoid blank white screen -->
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      background: #f4f4f4;
-      color: #222;
-    }
-    #root {
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem;
-      text-align: center;
-    }
-    .fallback {
-      display: block;
-      max-width: 600px;
-    }
-    .loading-spinner {
-      width: 45px;
-      height: 45px;
-      border: 5px solid #ddd;
-      border-top: 5px solid #1A2A6C;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-      margin: 1rem auto;
-    }
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-  </style>
-
-  <!-- JSON-LD Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "AutomotiveBusiness",
-    "name": "Gravity Group RSA",
-    "url": "https://gravitygrouprsa.co.za",
-    "image": "https://gravitygrouprsa.co.za/og-image.png",
-    "description": "24/7 towing, locksmith, tyre change and roadside assistance across South Africa.",
-    "telephone": "+27 82 630 0543",
-    "areaServed": "South Africa",
-    "serviceType": [
-      "Towing",
-      "Locksmith",
-      "Tyre Change",
-      "Battery Jumpstart",
-      "Fuel Delivery",
-      "Courier"
-    ]
-  }
-  </script>
-
+  <meta property="og:url" content="https://ggrsa.co.za/">
 </head>
-
 <body>
+  <header>
+    <div class="logo"><a href="index.html" style="color:#fff; text-decoration:none;">Gravity Group RSA</a></div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services/index.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <!-- Fallback content so website is NOT blank during load or JS failure -->
-  <div id="root">
-    <div class="fallback">
-      <div class="loading-spinner"></div>
-      <h1>Gravity Group RSA</h1>
-      <p>Loading the roadside assistance dashboard…</p>
-      <p>If this takes longer than usual, please reload or check your connection.</p>
+  <!-- Hero Section -->
+  <section class="hero" style="background-image: url('https://source.unsplash.com/1600x900/?roadside-assistance,tow-truck');">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>24/7 Roadside Assistance You Can Trust</h1>
+      <p>From towing and jumpstarts to locksmith and fuel delivery — we’ve got you covered across South Africa.</p>
+      <a href="contact.html" class="btn">Request Assistance</a>
     </div>
-  </div>
+  </section>
 
-  <!-- If JavaScript is disabled -->
-  <noscript>
-    <div style="padding: 2rem; text-align:center;">
-      <h2>You must enable JavaScript to view this website.</h2>
-      <p>Gravity Group RSA uses modern web features to display your content.</p>
+  <!-- Services Preview Section -->
+  <section id="services">
+    <h2 class="section-title">Our Services</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <i class="fas fa-truck-moving"></i>
+        <h3>Towing</h3>
+        <p>Car won’t start or stuck on the side of the road? We’ll dispatch a tow truck to your location.</p>
+        <a href="services/towing.html" class="btn">Learn More</a>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-car-battery"></i>
+        <h3>Jumpstarts</h3>
+        <p>Dead battery? A professional will be there to jumpstart or boost it so you can get moving again.</p>
+        <a href="services/jumpstart.html" class="btn">Learn More</a>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-key"></i>
+        <h3>Locksmith</h3>
+        <p>Locked your keys in your car? Our trained technicians will help you regain access quickly.</p>
+        <a href="services/locksmith.html" class="btn">Learn More</a>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-tire-flat"></i>
+        <h3>Tyre Change</h3>
+        <p>Flat tyre or blowout? We’ll install your good spare and get you back on the road safely.</p>
+        <a href="services/tyre-change.html" class="btn">Learn More</a>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-gas-pump"></i>
+        <h3>Fuel Delivery</h3>
+        <p>Run out of fuel? We’ll bring petrol or diesel right to your vehicle — you just cover the cost.</p>
+        <a href="services/fuel-delivery.html" class="btn">Learn More</a>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-box-open"></i>
+        <h3>Courier Solutions</h3>
+        <p>Need to transport a package urgently? Our courier service ensures safe and timely delivery.</p>
+        <a href="services/courier-solutions.html" class="btn">Learn More</a>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-battery-full"></i>
+        <h3>Battery Jumpstarts</h3>
+        <p>Whether it’s a drained battery or an old one, we offer on‑site jumpstarts and replacements.</p>
+        <a href="services/battery-jumpstarts.html" class="btn">Learn More</a>
+      </div>
     </div>
-  </noscript>
+  </section>
 
-  <!-- Your actual JS bundle -->
-  <script type="module" src="/src/main.jsx"></script>
+  <!-- About Preview Section -->
+  <section>
+    <h2 class="section-title">About Us</h2>
+    <div class="about-container">
+      <p>Gravity Group RSA is a proudly South African company dedicated to helping motorists when they need it most. Our experienced team and national network mean we can reach you quickly, whether you’re broken down on the highway, locked out of your car or simply out of fuel. With top‑notch equipment, friendly service and fair pricing, we aim to make roadside emergencies as stress‑free as possible.</p>
+      <a href="about.html" class="btn">Learn More About Us</a>
+    </div>
+  </section>
 
+  <!-- Contact Call‑out -->
+  <section style="background-color: var(--primary-color); color: #fff; text-align:center; padding:3rem 2rem;">
+    <h2 style="color:#fff; margin-bottom:1rem;">Stuck? We’re Here to Help</h2>
+    <p style="max-width:700px; margin:0 auto 2rem;">If you’re facing a roadside emergency, don’t hesitate. Contact Gravity Group RSA 24/7 for immediate assistance anywhere in South Africa.</p>
+    <a href="contact.html" class="btn" style="background-color:#fff; color:var(--primary-color);">Get Assistance Now</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <h4>Gravity Group RSA</h4>
+        <p>Your trusted partner for roadside assistance and courier services.</p>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-square"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter-square"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services/index.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>Johannesburg, Gauteng, South Africa</li>
+          <li>Phone: <a href="tel:+27123456789">+27&nbsp;12&nbsp;345&nbsp;6789</a></li>
+          <li>Email: <a href="mailto:info@ggrsa.co.za">info@ggrsa.co.za</a></li>
+        </ul>
+      </div>
+    </div>
+    <p style="text-align:center; margin-top:2rem; font-size:0.9rem;">&copy; <span id="year"></span> Gravity Group RSA. All rights reserved.</p>
+  </footer>
+  <script>
+    // update year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

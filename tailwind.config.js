@@ -7,15 +7,15 @@ module.exports = {
     "./public/**/*.html",
   ],
 
-safelist: [
-  "fade-in",
-  "bg-brand-primary",
-  "bg-brand-secondary",
-  "bg-brand-accent",
-  "text-brand-primary",
-  "text-brand-accent",
-],
-
+  safelist: [
+    "bg-brand-primary",
+    "bg-brand-secondary",
+    "bg-brand-accent",
+    "text-brand-primary",
+    "text-brand-accent",
+    "animate-fade",
+    "animate-float",
+  ],
 
   theme: {
     container: {
@@ -78,4 +78,3 @@ safelist: [
 
   darkMode: "class",
 };
-

@@ -1,137 +1,31 @@
-# Gravity Group RSA — Website Repository
+# Gravity Group RSA Website (Static Version)
 
-Gravity Group RSA provides roadside assistance services including towing, locksmith support, battery jumpstarts, tyre changes, fuel delivery, courier solutions, and more.
-This repository contains the full source code for the company’s multi-page marketing website built with **Next.js 15**, **Tailwind CSS**, and **TypeScript**.
+This repository contains a static, multi‑page marketing website for **Gravity Group RSA**, a South African company offering roadside assistance services.  The content and layout here are purpose built for deployment on **GitHub Pages** with custom domains configured via a `CNAME` file.  Each page is written in plain HTML, styled with a simple CSS framework, and sprinkled with a small amount of JavaScript to provide interactivity where necessary.
 
----
+## Included Pages
 
-## 🚀 Tech Stack
+| Path | Purpose |
+|---|---|
+| `/index.html` | Landing page featuring a hero banner, overview of services and call‑to‑action links. |
+| `/about.html` | Company history, mission and values. |
+| `/services/index.html` | A list of all services offered by Gravity Group RSA. |
+| `/services/*` | Individual service pages for each of our roadside assistance offerings (towing, locksmith support, jumpstarts, tyre changes, **fuel delivery**, **courier solutions** and **battery jumpstarts**). |
+| `/contact.html` | Contact details and a simple contact form. |
+| `/404.html` | Custom error page shown when a route is not found. |
+| `/robots.txt` | Allows search engine crawlers to index the site. |
+| `/sitemap.xml` | Enumerates all public pages for SEO. |
+| `CNAME` | Specifies the primary domain (``ggrsa.co.za``) for GitHub Pages. |
 
-* **Framework:** Next.js 15 (App Router)
-* **Language:** TypeScript
-* **Styling:** Tailwind CSS
-* **Deployment:** Firebase Hosting / Vercel
-* **SEO:** Dynamic metadata, OpenGraph, robots.txt, sitemap.xml
-* **CI/CD:** GitHub Actions
+## Quick Start
 
----
-
-## 📂 Repository Structure
-
-```
-gravity-group-rsa/
-├── .github/workflows/deploy.yml
-├── public/
-│   ├── favicon.ico
-│   ├── robots.txt
-│   ├── sitemap.xml
-│   └── images/
-│       ├── hero/
-│       └── services/
-│
-├── src/
-│   ├── app/
-│   │   ├── layout.tsx
-│   │   ├── page.tsx
-│   │   ├── about/page.tsx
-│   │   ├── contact/page.tsx
-│   │   └── services/
-│   │       ├── page.tsx
-│   │       └── [service]/page.tsx
-│   │
-│   ├── components/
-│   ├── lib/
-│   ├── styles/
-│   └── data/services.json
-│
-├── docs/
-│   ├── BRAND_GUIDE.md
-│   ├── DESIGN_NOTES.md
-│   └── WIREFRAMES/
-│
-├── tests/
-│
-├── .env.example
-├── package.json
-├── tailwind.config.js
-├── tsconfig.json
-└── next.config.js
-```
-
----
-
-## 🛠️ Getting Started
-
-Install dependencies:
+Open the files in a modern web browser to preview.  To serve locally for development, run a simple HTTP server from the root of the repository:
 
 ```bash
-npm install
+python3 -m http.server --directory ggrsa_site 8000
 ```
 
-Run the development server:
+Then visit `http://localhost:8000` in your browser.
 
-```bash
-npm run dev
-```
+## Deployment Notes
 
-Build for production:
-
-```bash
-npm run build
-npm start
-```
-
----
-
-## 🌐 Deployment
-
-### Firebase Hosting
-
-```bash
-firebase deploy
-```
-
-### Vercel
-
-```bash
-vercel --prod
-```
-
-Both deployment targets are supported.
-Environment variables must be configured according to `.env.example`.
-
----
-
-## 🧩 Services Architecture
-
-Each service (e.g., towing, locksmith, jumpstart) is rendered dynamically using:
-
-* `/src/data/services.json`
-* `/src/app/services/[service]/page.tsx`
-
-This makes content easy to scale without editing routes.
-
----
-
-## 📑 SEO Setup
-
-* `robots.txt` allows all public pages, blocks internal routes
-* `sitemap.xml` lists all services and core pages
-* `og-image.png` provides high-quality link previews
-* Metadata handled via `lib/seo.ts`
-
----
-
-## 🤝 Contributing
-
-1. Create a feature branch
-2. Commit changes with clear messages
-3. Open a Pull Request
-4. CI/CD will run build + lint checks automatically
-
----
-
-## 📜 License
-
-This project is proprietary and owned by **Gravity Group RSA**.
-No redistribution or repurposing without written permission.
+GitHub Pages reads everything from the repository root by default.  The `CNAME` file contains the primary domain; additional domains (e.g. ``ggrsa.com``, ``gravitygrouprsa.co.za``) should be configured at the DNS level to redirect to `ggrsa.co.za`.  After pushing to the `main` branch, enable GitHub Pages in the repository settings and select the **main** branch as the source.

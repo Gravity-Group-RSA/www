@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Gravity Group RSA</title>
+  <meta name="description" content="Get in touch with Gravity Group RSA for 24/7 roadside assistance, service requests and general enquiries.">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-o8TvqnMvUJ9qJbB+oiX//SfjUvxyjE1hBWYK6YvYGwm/dKk07RMGKXJ9+DiDaGR1lBTtPl8uDJBJjtyvsK2JDg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta property="og:title" content="Contact Gravity Group RSA">
+  <meta property="og:description" content="Contact us anytime for emergency roadside assistance, bookings or questions about our services.">
+  <meta property="og:image" content="https://source.unsplash.com/1200x630/?contact,roadside">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://ggrsa.co.za/contact.html">
+</head>
+<body>
+  <header>
+    <div class="logo"><a href="index.html" style="color:#fff; text-decoration:none;">Gravity Group RSA</a></div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services/index.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section>
+    <h1 class="section-title">Contact Us</h1>
+    <div class="contact-container">
+      <p>If you need immediate roadside assistance, please call our 24/7 hotline.  For non‑urgent enquiries, bookings or feedback, feel free to send us a message using the form below.</p>
+      <ul style="list-style:none; padding:0; margin:1rem 0;">
+        <li><strong>Hotline:</strong> <a href="tel:+27123456789">+27&nbsp;12&nbsp;345&nbsp;6789</a></li>
+        <li><strong>Email:</strong> <a href="mailto:info@ggrsa.co.za">info@ggrsa.co.za</a></li>
+        <li><strong>Address:</strong> Johannesburg, Gauteng, South Africa</li>
+      </ul>
+      <form class="contact-form" action="mailto:info@ggrsa.co.za" method="post" enctype="text/plain">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="tel" name="phone" placeholder="Phone Number" required>
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <h4>Gravity Group RSA</h4>
+        <p>Your trusted partner for roadside assistance and courier services.</p>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-square"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter-square"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services/index.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>Johannesburg, Gauteng, South Africa</li>
+          <li>Phone: <a href="tel:+27123456789">+27&nbsp;12&nbsp;345&nbsp;6789</a></li>
+          <li>Email: <a href="mailto:info@ggrsa.co.za">info@ggrsa.co.za</a></li>
+        </ul>
+      </div>
+    </div>
+    <p style="text-align:center; margin-top:2rem; font-size:0.9rem;">&copy; <span id="year"></span> Gravity Group RSA. All rights reserved.</p>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
