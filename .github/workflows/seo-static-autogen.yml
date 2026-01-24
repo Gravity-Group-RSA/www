@@ -2,7 +2,7 @@ name: Static SEO Autogenerator (Full & Hardened)
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
     paths-ignore:
       - "**/*.md"
       - ".github/workflows/seo-static-autogen.yml"
@@ -27,24 +27,15 @@ jobs:
         run: |
           set -Eeuo pipefail
 
-      # ----------------------------------------------------
-      # CONFIGURATION (single source of truth)
-      # ----------------------------------------------------
       - name: Define SEO configuration
         run: |
           cat << 'EOF' > seo.env
           BRAND="Gravity Group RSA"
           DOMAIN="https://www.ggrsa.co.za"
-          PHONE="+27 82 630 0543"
+          PHONE="+27826300543"
           WHATSAPP="27826300543"
 
-          SERVICES=(
-            "towing"
-            "locksmith"
-            "battery-jumpstart"
-            "fuel-delivery"
-            "tyre-change"
-          )
+          SERVICES=("towing" "locksmith" "battery-jumpstart" "fuel-delivery" "tyre-change")
 
           GAUTENG_CITIES=(
             "Johannesburg"
@@ -77,32 +68,27 @@ jobs:
           )
           EOF
 
-      # ----------------------------------------------------
-      # PAGE TEMPLATE + INTERNAL LINKING
-      # ----------------------------------------------------
       - name: Generate SEO pages
         run: |
           source seo.env
 
           mkdir -p services areas/gauteng/johannesburg
 
-          slugify () {
+          slugify() {
             echo "$1" | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g'
           }
 
-          html_page () {
-            local TITLE="$1"
-            local DESC="$2"
-            local BODY="$3"
-
-            [[ -z "$TITLE" || -z "$DESC" || -z "$BODY" ]] && exit 1
+          html_page() {
+            TITLE="$1"
+            DESC="$2"
+            BODY="$3"
 
             SERVICE_LINKS=""
             for S in "${SERVICES[@]}"; do
-              SERVICE_LINKS+="<li><a href=\"/services/${S}.html\">$(echo "$S" | sed 's/-/ /g')</a></li>"
+              SERVICE_LINKS="$SERVICE_LINKS<li><a href=\"/services/${S}.html\">${S//-/ }</a></li>"
             done
 
-            cat <<EOF
+            cat <<HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -126,92 +112,40 @@ jobs:
   <section>
     <h2>Need Help Now?</h2>
     <p><strong>24/7 Emergency Roadside Assistance</strong></p>
-    <a href="tel:${PHONE}">📞 Call Now</a><br>
-    <a href="https://wa.me/${WHATSAPP}">💬 WhatsApp Us</a>
+    <a href="tel:${PHONE}">Call Now</a><br>
+    <a href="https://wa.me/${WHATSAPP}">WhatsApp Us</a>
   </section>
 </body>
 </html>
-EOF
+HTML
           }
 
-          # ----------------------------------------------------
-          # SERVICE PAGES
-          # ----------------------------------------------------
           for S in "${SERVICES[@]}"; do
             html_page \
-              "$(echo "$S" | sed 's/-/ /g' | sed 's/.*/\u&/') Services | 24/7 Assistance" \
-              "24/7 $(echo "$S" | sed 's/-/ /g') services across Gauteng by ${BRAND}." \
-              "${BRAND} provides fast, reliable $(echo "$S" | sed 's/-/ /g') services across Gauteng and Johannesburg." \
+              "${S//-/ } Services | 24/7 Assistance" \
+              "24/7 ${S//-/ } services across Gauteng." \
+              "Gravity Group RSA provides fast ${S//-/ } services across Gauteng." \
               > "services/${S}.html"
           done
 
-          # ----------------------------------------------------
-          # GAUTENG CITY PAGES
-          # ----------------------------------------------------
           for CITY in "${GAUTENG_CITIES[@]}"; do
             SLUG=$(slugify "$CITY")
             html_page \
-              "Tow Truck & Roadside Assistance in ${CITY} | 24/7" \
-              "Need a tow truck or roadside assistance in ${CITY}? 24/7 service available." \
-              "${BRAND} offers towing, battery jumpstarts, locksmith and fuel delivery services in ${CITY}, Gauteng." \
+              "Roadside Assistance in ${CITY} | 24/7" \
+              "24/7 towing and roadside assistance in ${CITY}, Gauteng." \
+              "Emergency roadside assistance available in ${CITY}, Gauteng." \
               > "areas/gauteng/${SLUG}.html"
           done
 
-          # ----------------------------------------------------
-          # JOHANNESBURG SUBURB PAGES
-          # ----------------------------------------------------
           for SUB in "${JOHANNESBURG_SUBURBS[@]}"; do
             SLUG=$(slugify "$SUB")
             html_page \
               "Roadside Assistance in ${SUB}, Johannesburg | 24/7" \
-              "24/7 roadside assistance in ${SUB}, Johannesburg. Fast towing, locksmith and jumpstarts." \
-              "If you're stranded in ${SUB}, Johannesburg, ${BRAND} provides immediate roadside assistance 24/7." \
+              "24/7 roadside assistance in ${SUB}, Johannesburg." \
+              "Fast roadside assistance available in ${SUB}, Johannesburg." \
               > "areas/gauteng/johannesburg/${SLUG}.html"
           done
 
-          # ----------------------------------------------------
-          # GAUTENG PROVINCE HUB
-          # ----------------------------------------------------
-          CITY_LINKS=""
-          for CITY in "${GAUTENG_CITIES[@]}"; do
-            SLUG=$(slugify "$CITY")
-            CITY_LINKS+="<li><a href=\"/areas/gauteng/${SLUG}.html\">${CITY}</a></li>"
-          done
-
-          SUBURB_LINKS=""
-          for SUB in "${JOHANNESBURG_SUBURBS[@]}"; do
-            SLUG=$(slugify "$SUB")
-            SUBURB_LINKS+="<li><a href=\"/areas/gauteng/johannesburg/${SLUG}.html\">${SUB}</a></li>"
-          done
-
-          cat <<EOF > areas/gauteng/index.html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Roadside Assistance in Gauteng | 24/7 Tow Trucks</title>
-  <meta name="description" content="24/7 roadside assistance across Gauteng. Towing, locksmith, battery jumpstarts and fuel delivery.">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-  <h1>Roadside Assistance in Gauteng</h1>
-
-  <p>${BRAND} provides 24/7 emergency roadside assistance throughout Gauteng.</p>
-
-  <h2>Cities We Cover</h2>
-  <ul>${CITY_LINKS}</ul>
-
-  <h2>Johannesburg Suburbs</h2>
-  <ul>${SUBURB_LINKS}</ul>
-
-  <a href="tel:${PHONE}">📞 Call Now</a>
-</body>
-</html>
-EOF
-
-      # ----------------------------------------------------
-      # SITEMAP (validated)
-      # ----------------------------------------------------
       - name: Generate sitemap.xml
         run: |
           source seo.env
@@ -225,46 +159,24 @@ EOF
             done
 
             for CITY in "${GAUTENG_CITIES[@]}"; do
-              SLUG=$(echo "$CITY" | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
+              SLUG=$(slugify "$CITY")
               echo "<url><loc>${DOMAIN}/areas/gauteng/${SLUG}.html</loc></url>"
             done
 
             for SUB in "${JOHANNESBURG_SUBURBS[@]}"; do
-              SLUG=$(echo "$SUB" | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
+              SLUG=$(slugify "$SUB")
               echo "<url><loc>${DOMAIN}/areas/gauteng/johannesburg/${SLUG}.html</loc></url>"
             done
 
             echo '</urlset>'
           } > sitemap.xml
 
-          grep -q "<urlset" sitemap.xml || exit 1
-
-      # ----------------------------------------------------
-      # COMMIT SAFELY
-      # ----------------------------------------------------
-      - name: Detect changes
-        id: diff
+      - name: Commit and push if changed
         run: |
-          if [[ -z "$(git status --porcelain)" ]]; then
-            echo "changed=false" >> $GITHUB_OUTPUT
-          else
-            echo "changed=true" >> $GITHUB_OUTPUT
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git config user.name "ggrsa-seo-bot"
+            git config user.email "seo@skunkworks.africa"
+            git add services areas sitemap.xml
+            git commit -m "SEO: full Gauteng geo expansion [skip seo]"
+            git push
           fi
-
-      - name: Commit changes
-        if: steps.diff.outputs.changed == 'true'
-        run: |
-          git config user.name "ggrsa-seo-bot"
-          git config user.email "seo@skunkworks.africa"
-          git add services areas sitemap.xml
-          git commit -m "SEO: full Gauteng geo expansion [skip seo]"
-
-      - name: Push changes
-        if: steps.diff.outputs.changed == 'true'
-        uses: ad-m/github-push-action@v0.6.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Summary
-        run: |
-          echo "✅ Full SEO automation completed"
