@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -13,6 +13,65 @@
   <meta property="og:image" content="https://source.unsplash.com/1200x630/?towing,truck">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://ggrsa.co.za/services/towing.html">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17970737132"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-17970737132');
+
+  function gravityTrackConversion(sendTo, url) {
+    try {
+      gtag('event', 'conversion', {
+        'send_to': sendTo,
+        'event_callback': function () {
+          if (url) window.location.href = url;
+        }
+      });
+      setTimeout(function () {
+        if (url) window.location.href = url;
+      }, 800);
+    } catch (e) {
+      if (url) window.location.href = url;
+    }
+    return false;
+  }
+
+  function trackWhatsAppConversion(url) {
+    return gravityTrackConversion('AW-17970737132/WHATSAPP_LABEL', url);
+  }
+
+  function trackCallConversion(url) {
+    return gravityTrackConversion('AW-17970737132/CALL_LABEL', url);
+  }
+</script>
+<style>
+  html { scroll-behavior:smooth; }
+  img, video { max-width:100%; height:auto; }
+  .container, .wrapper, .content, .inner { width:min(1200px, 92%); margin-inline:auto; }
+  [data-mobile-menu] { display:none; }
+  [data-mobile-menu].is-open { display:block; }
+  [data-card-grid], .service-grid, .services-grid, .tile-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+    gap:1rem;
+  }
+  [data-service-card], .card, .tile, .service-card {
+    height:100%;
+  }
+  a, button { touch-action:manipulation; }
+  @media (max-width: 860px) {
+    nav ul, .nav-links, .desktop-nav { display:none !important; }
+    [data-mobile-toggle] { display:inline-flex !important; align-items:center; justify-content:center; }
+    h1 { font-size: clamp(2rem, 5vw, 3rem); }
+    h2 { font-size: clamp(1.4rem, 4vw, 2rem); }
+  }
+  @media (min-width: 861px) {
+    [data-mobile-toggle] { display:none !important; }
+    [data-mobile-menu] { display:none !important; }
+  }
+</style>
 </head>
 <body>
   <header>
@@ -26,6 +85,10 @@
       </ul>
     </nav>
   </header>
+<section class="container" style="padding:1rem 0;">
+  <label for="serviceSearch" style="display:block;font-weight:600;margin-bottom:8px;">Search services</label>
+  <input id="serviceSearch" data-service-search type="search" placeholder="Search towing, jumpstart, tyre change, locksmith..." style="width:100%;padding:14px 16px;border:1px solid #d1d5db;border-radius:12px;" />
+</section>
   <section>
     <h1 class="section-title">Towing</h1>
     <div class="about-container">
@@ -65,7 +128,7 @@
         <h4>Contact</h4>
         <ul>
           <li>Johannesburg, Gauteng, South Africa</li>
-          <li>Phone: <a href="tel:+27123456789">+27&nbsp;12&nbsp;345&nbsp;6789</a></li>
+          <li>Phone: <a href="tel:+27123456789" onclick="return trackCallConversion(this.href)">+27&nbsp;12&nbsp;345&nbsp;6789</a></li>
           <li>Email: <a href="mailto:info@ggrsa.co.za">info@ggrsa.co.za</a></li>
         </ul>
       </div>
@@ -75,5 +138,83 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+<a href="#" data-back-to-top aria-label="Back to top" style="position:fixed;right:20px;bottom:20px;z-index:9999;background:#111;color:#fff;padding:12px 14px;border-radius:999px;text-decoration:none;opacity:0;pointer-events:none;transition:opacity .25s ease;">â†‘</a>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const navToggle = document.querySelector('[data-mobile-toggle]');
+  const mobileMenu = document.querySelector('[data-mobile-menu]');
+  const searchInputs = document.querySelectorAll('[data-service-search]');
+  const serviceCards = document.querySelectorAll('[data-service-card]');
+  const backToTop = document.querySelector('[data-back-to-top]');
+  const yearTargets = document.querySelectorAll('[data-current-year]');
+
+  yearTargets.forEach(function(el){ el.textContent = new Date().getFullYear(); });
+
+  if (navToggle && mobileMenu) {
+    navToggle.addEventListener('click', function () {
+      const open = mobileMenu.classList.toggle('is-open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+
+  searchInputs.forEach(function(input){
+    input.addEventListener('input', function(){
+      const q = input.value.trim().toLowerCase();
+      serviceCards.forEach(function(card){
+        const txt = (card.textContent || '').toLowerCase();
+        card.style.display = txt.indexOf(q) >= 0 ? '' : 'none';
+      });
+    });
+  });
+
+  document.querySelectorAll('a[href^="https://wa.me/"]').forEach(function(el){
+    if (!el.getAttribute('onclick')) {
+      el.setAttribute('onclick', 'return trackWhatsAppConversion(this.href)');
+    }
+  });
+
+  document.querySelectorAll('a[href^="tel:"]').forEach(function(el){
+    if (!el.getAttribute('onclick')) {
+      el.setAttribute('onclick', 'return trackCallConversion(this.href)');
+    }
+  });
+
+  document.querySelectorAll('[data-action="whatsapp"]').forEach(function(el){
+    if (!el.getAttribute('href')) {
+      el.setAttribute('href', 'https://wa.me/=Hi%20Gravity%20Group%20RSA%2C%20I%20need%20assistance.');
+    }
+    if (!el.getAttribute('onclick')) {
+      el.setAttribute('onclick', 'return trackWhatsAppConversion(this.href)');
+    }
+  });
+
+  document.querySelectorAll('[data-action="call"]').forEach(function(el){
+    if (!el.getAttribute('href')) {
+      el.setAttribute('href', 'tel:+27826300543');
+    }
+    if (!el.getAttribute('onclick')) {
+      el.setAttribute('onclick', 'return trackCallConversion(this.href)');
+    }
+  });
+
+  window.addEventListener('scroll', function () {
+    if (!backToTop) return;
+    if (window.scrollY > 320) {
+      backToTop.style.opacity = '1';
+      backToTop.style.pointerEvents = 'auto';
+    } else {
+      backToTop.style.opacity = '0';
+      backToTop.style.pointerEvents = 'none';
+    }
+  });
+
+  if (backToTop) {
+    backToTop.addEventListener('click', function(e){
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+});
+</script>
 </body>
 </html>

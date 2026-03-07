@@ -1,114 +1,222 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Services | Gravity Group RSA</title>
-  <meta name="description" content="Browse the full range of roadside assistance and courier services offered by Gravity Group RSA.">
-  <link rel="stylesheet" href="../assets/css/styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-o8TvqnMvUJ9qJbB+oiX//SfjUvxyjE1hBWYK6YvYGwm/dKk07RMGKXJ9+DiDaGR1lBTtPl8uDJBJjtyvsK2JDg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <meta property="og:title" content="Services | Gravity Group RSA">
-  <meta property="og:description" content="Explore our towing, jumpstart, lockout, tyre change, fuel delivery, courier and battery services.">
-  <meta property="og:image" content="https://source.unsplash.com/1200x630/?service,tow-truck">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://ggrsa.co.za/services/">
+  <meta name="description" content="Explore Gravity Group RSA roadside assistance services including towing, jumpstarts, lockout help, tyre changes, fuel delivery, and courier solutions." />
+  <meta name="theme-color" content="#0f172a" />
+  <link rel="icon" href="https://raw.githubusercontent.com/Gravity-Group-RSA/www/refs/heads/main/assets/ggrsa-logo.ico" sizes="any" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root{--panel:#0f172a;--line:#e2e8f0;--text:#0f172a;--muted:#64748b;--soft:#f8fafc;--brand:#22c55e;--brand-dark:#16a34a;--radius:18px;--container:1180px;--header-h:76px;--shadow:0 14px 40px rgba(2,6,23,.12)}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--text);line-height:1.6;background:#fff;overflow-x:hidden}a{text-decoration:none;color:inherit}button,input,select{font:inherit}.container{width:min(calc(100% - 2rem),var(--container));margin:0 auto}
+    .topbar{background:#020617;color:#cbd5e1;font-size:.92rem}.topbar-inner{min-height:40px;display:flex;gap:1rem;align-items:center;justify-content:space-between;padding:.5rem 0;flex-wrap:wrap}.topbar-actions{display:flex;gap:1rem;flex-wrap:wrap}.topbar a:hover{color:#fff}
+    .site-header{position:sticky;top:0;z-index:1000;background:rgba(15,23,42,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08)}.header-inner{min-height:var(--header-h);display:flex;align-items:center;justify-content:space-between;gap:1rem}.brand{display:inline-flex;align-items:center;gap:.85rem;min-width:0}.brand img{width:44px;height:44px;object-fit:contain;background:#fff;border-radius:999px;padding:.2rem}.brand-title{color:#fff;font-weight:800;font-size:1rem}.brand-subtitle{color:#cbd5e1;font-size:.82rem}.nav-desktop{display:none;align-items:center;gap:.4rem}.nav-desktop a{color:#e2e8f0;font-weight:600;padding:.7rem .9rem;border-radius:10px}.nav-desktop a:hover,.nav-desktop a.active{background:rgba(255,255,255,.09);color:#fff}.header-cta{display:none;gap:.75rem;align-items:center}.menu-toggle{appearance:none;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.06);color:#fff;width:46px;height:46px;border-radius:12px;cursor:pointer}.mobile-panel{display:none;padding:.25rem 0 1rem}.mobile-panel.open{display:block}.mobile-nav{display:grid;gap:.5rem;padding-top:.75rem}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;min-height:46px;border-radius:12px;padding:.85rem 1.1rem;font-weight:700;border:1px solid transparent;cursor:pointer;transition:.18s}.btn:hover{transform:translateY(-1px)}.btn-primary{background:var(--brand);color:#fff;box-shadow:0 10px 24px rgba(34,197,94,.22)}.btn-primary:hover{background:var(--brand-dark)}.btn-secondary{background:#fff;color:var(--panel);border-color:#dbe3ee}.btn-dark{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.14)}
+    .hero{background:linear-gradient(135deg,#020617 0%,#0f172a 58%,#172554 100%);color:#fff;padding:4rem 0 3.5rem}.hero-grid{display:grid;gap:2rem;align-items:start}.hero h1{font-size:clamp(2rem,4vw,3.4rem);line-height:1.05;margin:.9rem 0 1rem}.hero p{color:#dbe7f3;max-width:62ch}.hero-actions{display:flex;gap:.85rem;flex-wrap:wrap;margin-top:1.25rem}
+    section{padding:4rem 0}.section-head{max-width:72ch;margin-bottom:1.3rem}.section-head h2{font-size:clamp(1.7rem,3vw,2.4rem);margin:0 0 .7rem}.section-head p{color:var(--muted)}
+    .toolbar{display:grid;gap:.9rem}.toolbar .row{display:grid;gap:.9rem}.input,select{width:100%;border:1px solid #cfd9e5;border-radius:12px;padding:.9rem 1rem;background:#fff}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:1.25rem;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:.85rem}.card .icon{width:52px;height:52px;border-radius:15px;display:grid;place-items:center;background:#eef9f1;color:var(--brand);font-size:1.1rem}.pill{display:inline-flex;align-items:center;gap:.4rem;border-radius:999px;background:#f1f5f9;padding:.45rem .75rem;font-size:.84rem;font-weight:700;color:#334155}.meta{display:flex;flex-wrap:wrap;gap:.55rem}.card p{color:var(--muted);margin:0}.actions{display:flex;gap:.65rem;flex-wrap:wrap;margin-top:auto}
+    .empty{padding:1.2rem;border:1px dashed var(--line);border-radius:16px;color:var(--muted);text-align:center}.feature-grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}.feature{background:var(--soft);border:1px solid var(--line);border-radius:16px;padding:1rem}
+    footer{background:#020617;color:#cbd5e1;padding:2rem 0}.footer-grid{display:grid;gap:1.2rem}.footer-links{display:flex;gap:1rem;flex-wrap:wrap}.footer-links a:hover{color:#fff}.back-top{position:fixed;right:1rem;bottom:1rem;width:48px;height:48px;border-radius:999px;border:0;background:#0f172a;color:#fff;box-shadow:var(--shadow);display:none;cursor:pointer}.back-top.show{display:grid;place-items:center}
+    @media (min-width:760px){.hero-grid,.toolbar .row,.footer-grid{grid-template-columns:1.15fr .85fr}.toolbar .row{grid-template-columns:1fr 220px 180px}.nav-desktop,.header-cta{display:flex}.menu-toggle,.mobile-panel{display:none!important}}
+  </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17970737132"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-17970737132');
+
+  function gravityTrackConversion(sendTo, url) {
+    try {
+      gtag('event', 'conversion', {
+        'send_to': sendTo,
+        'event_callback': function () {
+          if (url) window.location.href = url;
+        }
+      });
+      setTimeout(function () {
+        if (url) window.location.href = url;
+      }, 800);
+    } catch (e) {
+      if (url) window.location.href = url;
+    }
+    return false;
+  }
+
+  function trackWhatsAppConversion(url) {
+    return gravityTrackConversion('AW-17970737132/WHATSAPP_LABEL', url);
+  }
+
+  function trackCallConversion(url) {
+    return gravityTrackConversion('AW-17970737132/CALL_LABEL', url);
+  }
+</script>
+<style>
+  html { scroll-behavior:smooth; }
+  img, video { max-width:100%; height:auto; }
+  .container, .wrapper, .content, .inner { width:min(1200px, 92%); margin-inline:auto; }
+  [data-mobile-menu] { display:none; }
+  [data-mobile-menu].is-open { display:block; }
+  [data-card-grid], .service-grid, .services-grid, .tile-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+    gap:1rem;
+  }
+  [data-service-card], .card, .tile, .service-card {
+    height:100%;
+  }
+  a, button { touch-action:manipulation; }
+  @media (max-width: 860px) {
+    nav ul, .nav-links, .desktop-nav { display:none !important; }
+    [data-mobile-toggle] { display:inline-flex !important; align-items:center; justify-content:center; }
+    h1 { font-size: clamp(2rem, 5vw, 3rem); }
+    h2 { font-size: clamp(1.4rem, 4vw, 2rem); }
+  }
+  @media (min-width: 861px) {
+    [data-mobile-toggle] { display:none !important; }
+    [data-mobile-menu] { display:none !important; }
+  }
+</style>
 </head>
 <body>
-  <header>
-    <div class="logo"><a href="../index.html" style="color:#fff; text-decoration:none;">Gravity Group RSA</a></div>
-    <nav>
-      <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../about.html">About</a></li>
-        <li><a href="index.html">Services</a></li>
-        <li><a href="../contact.html">Contact</a></li>
+<header style="position:sticky;top:0;z-index:999;background:#fff;border-bottom:1px solid #e5e7eb;">
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;min-height:72px;gap:1rem;">
+    <a href="/index.html" style="font-weight:700;text-decoration:none;color:inherit;">Gravity Group RSA</a>
+
+    <nav aria-label="Primary navigation">
+      <ul class="desktop-nav" style="display:flex;gap:1rem;list-style:none;margin:0;padding:0;">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/services/index.html">Services</a></li>
+        <li><a href="/contact.html">Contact</a></li>
       </ul>
-    </nav>
-  </header>
-
-  <section>
-    <h1 class="section-title">Our Services</h1>
-    <p style="max-width: 800px; margin: 0 auto;">We offer a comprehensive suite of roadside assistance services designed to get you moving again as quickly as possible.  Click on a service to learn more about how we can help.</p>
-    <div class="services-grid">
-      <div class="service-card">
-        <i class="fas fa-truck-moving"></i>
-        <h3>Towing</h3>
-        <p>Emergency towing for breakdowns, accidents and immobilised vehicles.</p>
-        <a href="towing.html" class="btn">Learn More</a>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-car-battery"></i>
-        <h3>Jumpstarts</h3>
-        <p>On‑site jumpstart and battery boost services when your car won’t start.</p>
-        <a href="jumpstart.html" class="btn">Learn More</a>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-key"></i>
-        <h3>Locksmith</h3>
-        <p>Vehicle lockout solutions to get you back inside your car quickly and safely.</p>
-        <a href="locksmith.html" class="btn">Learn More</a>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-tire-flat"></i>
-        <h3>Tyre Change</h3>
-        <p>Flat tyre service – we install your spare tyre so you can continue your journey.</p>
-        <a href="tyre-change.html" class="btn">Learn More</a>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-gas-pump"></i>
-        <h3>Fuel Delivery</h3>
-        <p>Running on empty? We’ll deliver fuel or essential fluids wherever you are.</p>
-        <a href="fuel-delivery.html" class="btn">Learn More</a>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-box-open"></i>
-        <h3>Courier Solutions</h3>
-        <p>Rapid delivery of packages and documents when time matters most.</p>
-        <a href="courier-solutions.html" class="btn">Learn More</a>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-battery-full"></i>
-        <h3>Battery Jumpstarts</h3>
-        <p>Jumpstart or replace your vehicle’s battery on the spot.</p>
-        <a href="battery-jumpstarts.html" class="btn">Learn More</a>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="footer-inner">
-      <div>
-        <h4>Gravity Group RSA</h4>
-        <p>Your trusted partner for roadside assistance and courier services.</p>
-        <div class="social-icons">
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-square"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter-square"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <button type="button" data-mobile-toggle aria-expanded="false" aria-controls="mobile-menu" style="display:none;background:#111;color:#fff;border:0;border-radius:10px;padding:10px 14px;cursor:pointer;">Menu</button>
+      <div id="mobile-menu" data-mobile-menu style="padding:12px 0;">
+        <div style="display:grid;gap:10px;">
+          <a href="/index.html">Home</a>
+          <a href="/about.html">About</a>
+          <a href="/services/index.html">Services</a>
+          <a href="/contact.html">Contact</a>
+          <a data-action="call" href="tel:+27826300543" onclick="return trackCallConversion(this.href)">Call Now</a>
+          <a data-action="whatsapp" href="https://wa.me/27826300543?text=Hi%20Gravity%20Group%20RSA%2C%20I%20need%20assistance." onclick="return trackWhatsAppConversion(this.href)">WhatsApp</a>
         </div>
       </div>
-      <div>
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="../about.html">About</a></li>
-          <li><a href="index.html">Services</a></li>
-          <li><a href="../contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li>Johannesburg, Gauteng, South Africa</li>
-          <li>Phone: <a href="tel:+27123456789">+27&nbsp;12&nbsp;345&nbsp;6789</a></li>
-          <li>Email: <a href="mailto:info@ggrsa.co.za">info@ggrsa.co.za</a></li>
-        </ul>
-      </div>
-    </div>
-    <p style="text-align:center; margin-top:2rem; font-size:0.9rem;">&copy; <span id="year"></span> Gravity Group RSA. All rights reserved.</p>
-  </footer>
+    </nav>
+  </div>
+</header>
+  <div class="topbar"><div class="container topbar-inner"><div>Explore support categories and contact dispatch directly</div><div class="topbar-actions"><a href="tel:+27826300543" onclick="return trackCallConversion(this.href)"><i class="fa-solid fa-phone"></i> +27 82 630 0543</a><a href="https://wa.me/27826300543?text=Hi%20Gravity%20Group%20RSA%2C%20I%20need%20help." target="_blank" rel="noopener" onclick="return trackWhatsAppConversion(this.href)"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a></div></div></div>
+  <header class="site-header"><div class="container header-inner"><a class="brand" href="../index_fixed.html"><img src="https://raw.githubusercontent.com/Gravity-Group-RSA/www/refs/heads/main/assets/ggrsa-logo.ico" alt="Gravity Group RSA logo"><div><div class="brand-title">Gravity Group RSA</div><div class="brand-subtitle">Roadside assistance • recovery • support</div></div></a><nav class="nav-desktop" aria-label="Primary"><a href="../index_fixed.html">Home</a><a href="../about.html">About</a><a href="services_index.html" class="active">Services</a><a href="../contact.html">Contact</a></nav><div class="header-cta"><a class="btn btn-dark" href="../contact.html">Request Service</a><a class="btn btn-primary" href="https://wa.me/27826300543?text=Hi%20Gravity%20Group%20RSA%2C%20I%20need%20urgent%20roadside%20help." target="_blank" rel="noopener" onclick="return trackWhatsAppConversion(this.href)">Urgent WhatsApp</a></div><button class="menu-toggle" aria-expanded="false" aria-controls="mobilePanel" id="menuToggle"><i class="fa-solid fa-bars"></i></button></div><div class="container mobile-panel" id="mobilePanel"><nav class="mobile-nav"><a class="btn btn-secondary" href="../index_fixed.html">Home</a><a class="btn btn-secondary" href="../about.html">About</a><a class="btn btn-secondary" href="services_index.html">Services</a><a class="btn btn-secondary" href="../contact.html">Contact</a><a class="btn btn-primary" href="https://wa.me/27826300543?text=Hi%20Gravity%20Group%20RSA%2C%20I%20need%20urgent%20roadside%20help." target="_blank" rel="noopener" onclick="return trackWhatsAppConversion(this.href)">WhatsApp Dispatch</a></nav></div></header>
+  <main>
+<section class="container" style="padding:1rem 0;">
+  <label for="serviceSearch" style="display:block;font-weight:600;margin-bottom:8px;">Search services</label>
+  <input id="serviceSearch" data-service-search type="search" placeholder="Search towing, jumpstart, tyre change, locksmith..." style="width:100%;padding:14px 16px;border:1px solid #d1d5db;border-radius:12px;" />
+</section>
+    <section class="hero"><div class="container hero-grid"><div><h1>Find the right roadside service quickly.</h1><p>Use search, category filters, and one-tap actions to move from issue identification to contact without wasted clicks.</p><div class="hero-actions"><a class="btn btn-primary" href="#catalog">Browse Service Catalog</a><a class="btn btn-secondary" href="../contact.html">Open Contact Options</a></div></div><div class="feature-grid"><div class="feature"><strong>Searchable catalog</strong><p style="margin:.45rem 0 0;color:#dbe7f3">Live filtering by name and category.</p></div><div class="feature"><strong>Actionable cards</strong><p style="margin:.45rem 0 0;color:#dbe7f3">Each service card has working page and WhatsApp actions.</p></div><div class="feature"><strong>Mobile ready</strong><p style="margin:.45rem 0 0;color:#dbe7f3">Optimised for one-handed navigation.</p></div></div></div></section>
+
+    <section id="catalog"><div class="container"><div class="section-head"><h2>Service catalog</h2><p>Filter by what you need and take action directly from the result cards.</p></div><div class="toolbar"><div class="row"><input id="searchInput" class="input" placeholder="Search towing, lockout, tyre, fuel..." /><select id="categoryFilter"><option value="all">All categories</option><option value="recovery">Recovery</option><option value="battery">Battery</option><option value="access">Access</option><option value="tyres">Tyres</option><option value="fuel">Fuel</option><option value="logistics">Logistics</option></select><select id="sortFilter"><option value="az">Sort A–Z</option><option value="za">Sort Z–A</option></select></div></div><div class="cards" data-service-card id="serviceCards" style="margin-top:1rem"></div><div id="emptyState" class="empty" hidden>No services match your current search.</div></div></section>
+
+    <section><div class="container"><div class="section-head"><h2>How to use this page</h2><p>The page is built to make service discovery and action more direct.</p></div><div class="feature-grid"><div class="feature"><strong>Use search</strong><p class="muted">Find a service by plain language, not internal terminology.</p></div><div class="feature"><strong>Use categories</strong><p class="muted">Narrow the catalog to likely issue types.</p></div><div class="feature"><strong>Use working actions</strong><p class="muted">Open the service page or contact dispatch with a prefilled message.</p></div></div></div></section>
+  </main>
+  <footer><div class="container footer-grid"><div><strong style="color:#fff">Gravity Group RSA</strong><p style="margin:.5rem 0 0">Roadside assistance and support services across South Africa.</p></div><div class="footer-links"><a href="../index_fixed.html">Home</a><a href="../about.html">About</a><a href="services_index.html">Services</a><a href="../contact.html">Contact</a></div></div></footer><button class="back-top" id="backTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    const menuToggle=document.getElementById('menuToggle'),mobilePanel=document.getElementById('mobilePanel'); if(menuToggle){menuToggle.addEventListener('click',()=>{const open=mobilePanel.classList.toggle('open');menuToggle.setAttribute('aria-expanded',open?'true':'false');menuToggle.innerHTML=open?'<i class="fa-solid fa-xmark"></i>':'<i class="fa-solid fa-bars"></i>';});}
+    const services=[
+      {name:'Towing', category:'recovery', description:'Vehicle towing and recovery coordination for breakdowns and non-drivable situations.', page:'towing.html', msg:'I need towing assistance.'},
+      {name:'Jumpstart', category:'battery', description:'Battery jumpstart support to help get you moving again.', page:'jumpstart.html', msg:'I need a jumpstart.'},
+      {name:'Battery Jumpstarts', category:'battery', description:'Dedicated battery support option for flat-battery incidents.', page:'battery-jumpstarts.html', msg:'I need battery jumpstart assistance.'},
+      {name:'Locksmith', category:'access', description:'Vehicle lockout and key access support.', page:'locksmith.html', msg:'I am locked out of my vehicle.'},
+      {name:'Tyre Change', category:'tyres', description:'Assistance with damaged tyres or roadside wheel changes.', page:'tyre-change.html', msg:'I need help with a tyre change.'},
+      {name:'Fuel Delivery', category:'fuel', description:'Emergency fuel assistance when you are stranded without fuel.', page:'fuel-delivery.html', msg:'I need fuel delivery.'},
+      {name:'Courier Solutions', category:'logistics', description:'Courier and transport-related support services.', page:'courier-solutions.html', msg:'I need courier solutions support.'}
+    ];
+    const cards=document.getElementById('serviceCards'); const empty=document.getElementById('emptyState'); const searchInput=document.getElementById('searchInput'); const categoryFilter=document.getElementById('categoryFilter'); const sortFilter=document.getElementById('sortFilter');
+    function render(){ let items=[...services]; const q=searchInput.value.toLowerCase().trim(); const cat=categoryFilter.value; const sort=sortFilter.value; if(q){items=items.filter(s=>`${s.name} ${s.description} ${s.category}`.toLowerCase().includes(q));} if(cat!=='all'){items=items.filter(s=>s.category===cat);} items.sort((a,b)=> sort==='za' ? b.name.localeCompare(a.name) : a.name.localeCompare(b.name)); cards.innerHTML=items.map(item=>`<article class="card" data-service-card><div class="icon"><i class="fa-solid fa-screwdriver-wrench"></i></div><div class="meta"><span class="pill">${item.category}</span></div><h3>${item.name}</h3><p>${item.description}</p><div class="actions"><a class="btn btn-secondary" href="${item.page}">Open Page</a><a class="btn btn-primary" href="https://wa.me/27826300543?text=${encodeURIComponent('Hi Gravity Group RSA, '+item.msg)}" target="_blank" rel="noopener" onclick="return trackWhatsAppConversion(this.href)">WhatsApp</a></div></article>`).join(''); empty.hidden=items.length!==0; }
+    [searchInput,categoryFilter,sortFilter].forEach(el=>el.addEventListener('input',render)); render();
+    const backTop=document.getElementById('backTop'); window.addEventListener('scroll',()=>backTop.classList.toggle('show',window.scrollY>500)); backTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
   </script>
+<a href="#" data-back-to-top aria-label="Back to top" style="position:fixed;right:20px;bottom:20px;z-index:9999;background:#111;color:#fff;padding:12px 14px;border-radius:999px;text-decoration:none;opacity:0;pointer-events:none;transition:opacity .25s ease;">â†‘</a>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const navToggle = document.querySelector('[data-mobile-toggle]');
+  const mobileMenu = document.querySelector('[data-mobile-menu]');
+  const searchInputs = document.querySelectorAll('[data-service-search]');
+  const serviceCards = document.querySelectorAll('[data-service-card]');
+  const backToTop = document.querySelector('[data-back-to-top]');
+  const yearTargets = document.querySelectorAll('[data-current-year]');
+
+  yearTargets.forEach(function(el){ el.textContent = new Date().getFullYear(); });
+
+  if (navToggle && mobileMenu) {
+    navToggle.addEventListener('click', function () {
+      const open = mobileMenu.classList.toggle('is-open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+
+  searchInputs.forEach(function(input){
+    input.addEventListener('input', function(){
+      const q = input.value.trim().toLowerCase();
+      serviceCards.forEach(function(card){
+        const txt = (card.textContent || '').toLowerCase();
+        card.style.display = txt.indexOf(q) >= 0 ? '' : 'none';
+      });
+    });
+  });
+
+  document.querySelectorAll('a[href^="https://wa.me/"]').forEach(function(el){
+    if (!el.getAttribute('onclick')) {
+      el.setAttribute('onclick', 'return trackWhatsAppConversion(this.href)');
+    }
+  });
+
+  document.querySelectorAll('a[href^="tel:"]').forEach(function(el){
+    if (!el.getAttribute('onclick')) {
+      el.setAttribute('onclick', 'return trackCallConversion(this.href)');
+    }
+  });
+
+  document.querySelectorAll('[data-action="whatsapp"]').forEach(function(el){
+    if (!el.getAttribute('href')) {
+      el.setAttribute('href', 'https://wa.me/=Hi%20Gravity%20Group%20RSA%2C%20I%20need%20assistance.');
+    }
+    if (!el.getAttribute('onclick')) {
+      el.setAttribute('onclick', 'return trackWhatsAppConversion(this.href)');
+    }
+  });
+
+  document.querySelectorAll('[data-action="call"]').forEach(function(el){
+    if (!el.getAttribute('href')) {
+      el.setAttribute('href', 'tel:+27826300543');
+    }
+    if (!el.getAttribute('onclick')) {
+      el.setAttribute('onclick', 'return trackCallConversion(this.href)');
+    }
+  });
+
+  window.addEventListener('scroll', function () {
+    if (!backToTop) return;
+    if (window.scrollY > 320) {
+      backToTop.style.opacity = '1';
+      backToTop.style.pointerEvents = 'auto';
+    } else {
+      backToTop.style.opacity = '0';
+      backToTop.style.pointerEvents = 'none';
+    }
+  });
+
+  if (backToTop) {
+    backToTop.addEventListener('click', function(e){
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+});
+</script>
 </body>
 </html>

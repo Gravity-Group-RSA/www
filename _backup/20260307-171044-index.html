@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gravity Group RSA | 24/7 Roadside Assistance South Africa</title>
+  <meta name="description" content="Gravity Group RSA provides 24/7 roadside assistance across South Africa including towing, jumpstarts, lockouts, tyre changes, fuel delivery and courier services." />
+  <meta name="theme-color" content="#0f172a" />
+
+  <link rel="icon" href="https://raw.githubusercontent.com/Gravity-Group-RSA/www/refs/heads/main/assets/ggrsa-logo.ico" sizes="any" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <meta property="og:title" content="Gravity Group RSA | 24/7 Roadside Assistance" />
+  <meta property="og:description" content="Fast, reliable roadside assistance across South Africa. Call or WhatsApp us 24/7." />
+  <meta property="og:image" content="https://raw.githubusercontent.com/Gravity-Group-RSA/www/refs/heads/main/assets/instagram.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.ggrsa.co.za/" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutomotiveBusiness",
+    "name": "Gravity Group RSA",
+    "url": "https://www.ggrsa.co.za/",
+    "telephone": "+27826300543",
+    "areaServed": "South Africa",
+    "openingHours": "Mo-Su 00:00-23:59",
+    "sameAs": [
+      "https://www.instagram.com/gravitygroupsouthafrica/",
+      "https://www.facebook.com/gravitygrouprsa"
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #08111f;
+      --panel: #0f172a;
+      --panel-2: #111c32;
+      --card: #ffffff;
+      --muted: #64748b;
+      --text: #0f172a;
+      --text-inverse: #f8fafc;
+      --line: #e2e8f0;
+      --soft: #f8fafc;
+      --brand: #22c55e;
+      --brand-dark: #16a34a;
+      --accent: #38bdf8;
+      --warning: #f59e0b;
+      --shadow: 0 14px 40px rgba(2, 6, 23, 0.12);
+      --radius: 18px;
+      --radius-sm: 12px;
+      --container: 1180px;
+      --header-h: 76px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--text);
+      background: #fff;
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+
+    .container {
+      width: min(calc(100% - 2rem), var(--container));
+      margin: 0 auto;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      background: #fff;
+      color: #000;
+      padding: .75rem 1rem;
+      z-index: 9999;
+    }
+    .skip-link:focus { left: 1rem; top: 1rem; }
+
+    .topbar {
+      background: #020617;
+      color: #cbd5e1;
+      font-size: .92rem;
+    }
+    .topbar-inner {
+      min-height: 40px;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      justify-content: space-between;
+      padding: .5rem 0;
+      flex-wrap: wrap;
+    }
+    .topbar-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .topbar a:hover { color: #fff; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(14px);
+      background: rgba(15, 23, 42, 0.92);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .header-inner {
+      min-height: var(--header-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: .85rem;
+      min-width: 0;
+    }
+    .brand img {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+      background: #fff;
+      border-radius: 999px;
+      padding: .2rem;
+    }
+    .brand-text {
+      min-width: 0;
+    }
+    .brand-title {
+      color: #fff;
+      font-weight: 800;
+      font-size: 1rem;
+      line-height: 1.1;
+    }
+    .brand-subtitle {
+      color: #cbd5e1;
+      font-size: .82rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .nav-desktop {
+      display: none;
+      align-items: center;
+      gap: .4rem;
+    }
+    .nav-desktop a {
+      color: #e2e8f0;
+      font-weight: 600;
+      font-size: .95rem;
+      padding: .7rem .9rem;
+      border-radius: 10px;
+      transition: .2s ease;
+    }
+    .nav-desktop a:hover,
+    .nav-desktop a:focus-visible,
+    .nav-desktop a.active {
+      background: rgba(255,255,255,.09);
+      color: #fff;
+    }
+
+    .header-cta {
+      display: none;
+      align-items: center;
+      gap: .75rem;
+    }
+
+    .menu-toggle {
+      appearance: none;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      color: #fff;
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    .mobile-panel {
+      display: none;
+      padding: .25rem 0 1rem;
+    }
+    .mobile-panel.open { display: block; }
+    .mobile-nav {
+      display: grid;
+      gap: .5rem;
+      padding-top: .75rem;
+    }
+    .mobile-nav a,
+    .mobile-nav button,
+    .mobile-cta {
+      width: 100%;
+      justify-content: flex-start;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .6rem;
+      min-height: 46px;
+      border-radius: 12px;
+      padding: .85rem 1.1rem;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: transform .18s ease, background .18s ease, border-color .18s ease, color .18s ease;
+      cursor: pointer;
+      text-align: center;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary {
+      background: var(--brand);
+      color: #fff;
+      box-shadow: 0 10px 24px rgba(34, 197, 94, 0.22);
+    }
+    .btn-primary:hover { background: var(--brand-dark); }
+    .btn-secondary {
+      background: #fff;
+      color: var(--panel);
+      border-color: #dbe3ee;
+    }
+    .btn-secondary:hover { background: #f8fafc; }
+    .btn-dark {
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      border-color: rgba(255,255,255,.14);
+    }
+    .btn-dark:hover { background: rgba(255,255,255,0.13); }
+    .btn-ghost {
+      background: transparent;
+      color: var(--panel);
+      border-color: var(--line);
+    }
+
+    .hero {
+      position: relative;
+      color: #fff;
+      background:
+        radial-gradient(circle at top right, rgba(56, 189, 248, .16), transparent 28%),
+        radial-gradient(circle at left center, rgba(34, 197, 94, .12), transparent 22%),
+        linear-gradient(135deg, #020617 0%, #0f172a 58%, #172554 100%);
+      overflow: hidden;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -10% -80px auto;
+      width: 260px;
+      height: 260px;
+      background: rgba(34,197,94,.08);
+      border-radius: 999px;
+      filter: blur(16px);
+      pointer-events: none;
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      padding: clamp(3rem, 6vw, 5rem) 0;
+      align-items: center;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .84rem;
+      font-weight: 700;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+      padding: .5rem .8rem;
+      border-radius: 999px;
+      color: #dff8e7;
+      background: rgba(34, 197, 94, .16);
+      border: 1px solid rgba(34, 197, 94, .2);
+    }
+    .hero h1 {
+      margin: 1rem 0 0;
+      font-size: clamp(2rem, 5vw, 3.8rem);
+      line-height: 1.05;
+      letter-spacing: -.03em;
+    }
+    .hero p {
+      margin: 1rem 0 0;
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: #dbe5f3;
+      max-width: 62ch;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .85rem;
+      margin-top: 1.5rem;
+    }
+    .hero-points {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: .85rem;
+      margin-top: 1.5rem;
+    }
+    .hero-point {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: .9rem 1rem;
+      color: #e2e8f0;
+      font-weight: 600;
+    }
+    .hero-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 24px;
+      padding: 1.25rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+    }
+    .status-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .75rem;
+      margin-top: 1rem;
+    }
+    .status-item {
+      background: rgba(255,255,255,0.09);
+      border-radius: 16px;
+      padding: 1rem;
+      text-align: center;
+    }
+    .status-item strong {
+      display: block;
+      font-size: 1.2rem;
+      color: #fff;
+    }
+    .status-item span {
+      color: #dbe5f3;
+      font-size: .88rem;
+    }
+
+    .section {
+      padding: clamp(3rem, 5vw, 5rem) 0;
+    }
+    .section-soft { background: var(--soft); }
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      line-height: 1.05;
+      letter-spacing: -.02em;
+    }
+    .section-head p {
+      margin: .5rem 0 0;
+      color: var(--muted);
+      max-width: 62ch;
+    }
+
+    .action-grid,
+    .services-grid,
+    .highlights-grid,
+    .footer-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .action-grid {
+      grid-template-columns: repeat(2, minmax(0,1fr));
+    }
+    .action-card,
+    .service-card,
+    .highlight-card,
+    .search-panel,
+    .trust-bar,
+    .contact-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .action-card {
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      gap: .9rem;
+      min-height: 84px;
+    }
+    .action-card i {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: #ecfdf5;
+      color: var(--brand-dark);
+      font-size: 1.15rem;
+      flex: 0 0 auto;
+    }
+    .action-card strong { display: block; }
+    .action-card span { color: var(--muted); font-size: .92rem; }
+
+    .trust-bar {
+      padding: 1rem 1.1rem;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: .75rem;
+      margin-top: 1rem;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      color: var(--text);
+      font-weight: 600;
+      min-width: 0;
+    }
+    .trust-item i {
+      color: var(--brand-dark);
+      width: 18px;
+      text-align: center;
+      flex: 0 0 auto;
+    }
+
+    .search-panel {
+      padding: 1rem;
+      margin-bottom: 1.25rem;
+    }
+    .search-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: .85rem;
+    }
+    .search-box {
+      position: relative;
+    }
+    .search-box i {
+      position: absolute;
+      left: .9rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+    }
+    .search-box input {
+      width: 100%;
+      min-height: 50px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      padding: .85rem 1rem .85rem 2.7rem;
+      background: #fff;
+    }
+    .filter-chips {
+      display: flex;
+      gap: .6rem;
+      flex-wrap: wrap;
+    }
+    .chip {
+      appearance: none;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--text);
+      padding: .7rem .95rem;
+      min-height: 44px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .chip.active,
+    .chip:hover {
+      background: #e8f7ef;
+      border-color: #b9ebca;
+      color: var(--brand-dark);
+    }
+
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+    .service-card {
+      position: relative;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      min-height: 100%;
+    }
+    .service-card[hidden] { display: none !important; }
+    .service-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: start;
+    }
+    .service-icon {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: #eff6ff;
+      color: #2563eb;
+      font-size: 1.3rem;
+      flex: 0 0 auto;
+    }
+    .service-card h3 {
+      margin: .2rem 0 0;
+      font-size: 1.2rem;
+    }
+    .service-card p {
+      margin: .5rem 0 0;
+      color: var(--muted);
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      padding: .45rem .7rem;
+      border-radius: 999px;
+      background: #fff7ed;
+      color: #b45309;
+      font-size: .78rem;
+      font-weight: 700;
+      border: 1px solid #fed7aa;
+      white-space: nowrap;
+    }
+    .service-meta {
+      display: flex;
+      gap: .75rem;
+      flex-wrap: wrap;
+      color: #334155;
+      font-size: .9rem;
+      font-weight: 600;
+    }
+    .service-meta span { display: inline-flex; align-items: center; gap: .4rem; }
+    .service-actions {
+      margin-top: auto;
+      display: flex;
+      gap: .65rem;
+      flex-wrap: wrap;
+    }
+    .service-link {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      color: #2563eb;
+      font-weight: 700;
+    }
+
+    .results-note {
+      color: var(--muted);
+      font-size: .95rem;
+      margin-top: .75rem;
+    }
+
+    .highlights-grid {
+      grid-template-columns: 1fr;
+    }
+    .highlight-card {
+      padding: 1.25rem;
+    }
+    .highlight-card i {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: #eff6ff;
+      color: #2563eb;
+      margin-bottom: .9rem;
+      font-size: 1.15rem;
+    }
+    .highlight-card h3 { margin: 0 0 .45rem; }
+    .highlight-card p { margin: 0; color: var(--muted); }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    .contact-card {
+      padding: 1.25rem;
+    }
+    .contact-list {
+      display: grid;
+      gap: .8rem;
+      margin-top: 1rem;
+    }
+    .contact-item {
+      display: flex;
+      gap: .9rem;
+      align-items: flex-start;
+    }
+    .contact-item i {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: #ecfdf5;
+      color: var(--brand-dark);
+      flex: 0 0 auto;
+    }
+    .map-frame {
+      min-height: 320px;
+      border: 0;
+      width: 100%;
+      border-radius: 18px;
+    }
+
+    .social-box {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+      text-align: center;
+    }
+    .social-handle {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      font-weight: 700;
+      color: #2563eb;
+    }
+    .qr-wrap {
+      width: min(100%, 280px);
+      padding: .75rem;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+
+    footer {
+      background: #020617;
+      color: #cbd5e1;
+      padding: 3rem 0 1.5rem;
+      margin-top: 0;
+    }
+    .footer-grid {
+      grid-template-columns: 1fr;
+      align-items: start;
+    }
+    .footer-grid h3,
+    .footer-grid h4 {
+      color: #fff;
+      margin-top: 0;
+    }
+    .footer-links {
+      display: grid;
+      gap: .65rem;
+    }
+    .footer-links a:hover { color: #fff; }
+    .social-links {
+      display: flex;
+      gap: .8rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    .social-links a {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: rgba(255,255,255,.08);
+      color: #fff;
+    }
+    .social-links a:hover { background: rgba(255,255,255,.14); }
+    .copyright {
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255,255,255,.1);
+      font-size: .92rem;
+      color: #94a3b8;
+    }
+
+    .back-to-top {
+      position: fixed;
+      right: 1rem;
+      bottom: 1rem;
+      z-index: 950;
+      width: 50px;
+      height: 50px;
+      border: 0;
+      border-radius: 14px;
+      background: var(--panel);
+      color: #fff;
+      box-shadow: 0 16px 30px rgba(2,6,23,.22);
+      display: none;
+      cursor: pointer;
+    }
+    .back-to-top.show { display: inline-grid; place-items: center; }
+
+    .hidden-visually {
+      position: absolute !important;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0, 0, 0, 0);
+      white-space: nowrap; border: 0;
+    }
+
+    @media (min-width: 700px) {
+      .search-row { grid-template-columns: 1.1fr auto; align-items: center; }
+      .services-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .highlights-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .contact-wrap { grid-template-columns: 1.05fr .95fr; }
+      .footer-grid { grid-template-columns: 1.3fr .7fr .8fr; }
+      .action-grid { grid-template-columns: repeat(4, minmax(0,1fr)); }
+      .trust-bar { grid-template-columns: repeat(4, minmax(0,1fr)); }
+    }
+
+    @media (min-width: 980px) {
+      .nav-desktop, .header-cta { display: flex; }
+      .menu-toggle, .mobile-panel { display: none !important; }
+      .hero-inner { grid-template-columns: 1.2fr .8fr; gap: 2.5rem; }
+      .services-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
+      .highlights-grid { grid-template-columns: repeat(4, minmax(0,1fr)); }
+    }
+
+    @media (max-width: 699px) {
+      .action-grid,
+      .hero-points,
+      .trust-bar,
+      .status-strip {
+        grid-template-columns: 1fr;
+      }
+      .topbar-inner {
+        justify-content: center;
+        text-align: center;
+      }
+      .hero-actions .btn {
+        width: 100%;
+      }
+      .service-actions .btn,
+      .service-actions .service-link {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div><i class="fa-solid fa-clock"></i> 24/7 emergency roadside assistance across South Africa</div>
+      <div class="topbar-actions">
+        <a href="tel:+27826300543"><i class="fa-solid fa-phone"></i> 082 630 0543</a>
+        <a href="https://wa.me/27826300543" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="Gravity Group RSA home">
+        <img src="https://raw.githubusercontent.com/Gravity-Group-RSA/www/af5dbb3decc3c51c5a750ede4906fbe14fcb6ba8/assets/ggrsa.svg" alt="Gravity Group RSA logo" />
+        <div class="brand-text">
+          <div class="brand-title">Gravity Group RSA</div>
+          <div class="brand-subtitle">Roadside assistance, recovery and support</div>
+        </div>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Primary">
+        <a href="#services" data-nav-link>Services</a>
+        <a href="#why-us" data-nav-link>Why Us</a>
+        <a href="#social" data-nav-link>Social</a>
+        <a href="#contact" data-nav-link>Contact</a>
+        <a href="/about.html">About</a>
+      </nav>
+
+      <div class="header-cta">
+        <a class="btn btn-dark" href="tel:+27826300543"><i class="fa-solid fa-phone"></i> Call</a>
+        <a class="btn btn-primary" href="https://wa.me/27826300543" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+      </div>
+
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobilePanel" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+
+    <div class="container mobile-panel" id="mobilePanel">
+      <nav class="mobile-nav" aria-label="Mobile">
+        <a class="btn btn-dark" href="#services">Services</a>
+        <a class="btn btn-dark" href="#why-us">Why Us</a>
+        <a class="btn btn-dark" href="#social">Social</a>
+        <a class="btn btn-dark" href="#contact">Contact</a>
+        <a class="btn btn-dark" href="/about.html">About</a>
+        <a class="btn btn-secondary mobile-cta" href="tel:+27826300543"><i class="fa-solid fa-phone"></i> Call now</a>
+        <a class="btn btn-primary mobile-cta" href="https://wa.me/27826300543" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <span class="eyebrow"><i class="fa-solid fa-shield-heart"></i> Trusted roadside response</span>
+          <h1>Fast roadside help when you need it most.</h1>
+          <p>From towing and jumpstarts to lockouts, tyre changes, fuel delivery and courier support, Gravity Group RSA provides responsive service with simple contact actions and clear service navigation.</p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/27826300543" target="_blank" rel="noopener">
+              <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+            </a>
+            <a class="btn btn-secondary" href="tel:+27826300543">
+              <i class="fa-solid fa-phone"></i> Call now
+            </a>
+            <a class="btn btn-dark" href="#services">
+              <i class="fa-solid fa-magnifying-glass"></i> Browse services
+            </a>
+          </div>
+
+          <div class="hero-points" aria-label="Key benefits">
+            <div class="hero-point"><i class="fa-solid fa-check"></i> 24/7 emergency support</div>
+            <div class="hero-point"><i class="fa-solid fa-check"></i> Easy mobile-first contact</div>
+            <div class="hero-point"><i class="fa-solid fa-check"></i> Clear service categories</div>
+            <div class="hero-point"><i class="fa-solid fa-check"></i> Quick action buttons</div>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Quick actions">
+          <h2 style="margin:0 0 .5rem; font-size:1.35rem; color:#fff;">Need assistance right now?</h2>
+          <p style="margin:0; color:#dbe5f3;">Use the quickest route below and get connected immediately.</p>
+
+          <div class="action-grid" style="margin-top:1rem;">
+            <a class="action-card" href="tel:+27826300543">
+              <i class="fa-solid fa-phone"></i>
+              <div><strong>Call dispatch</strong><span>Direct phone assistance</span></div>
+            </a>
+            <a class="action-card" href="https://wa.me/27826300543" target="_blank" rel="noopener">
+              <i class="fa-brands fa-whatsapp"></i>
+              <div><strong>WhatsApp chat</strong><span>Fast text support</span></div>
+            </a>
+            <a class="action-card" href="#services">
+              <i class="fa-solid fa-car-burst"></i>
+              <div><strong>Find a service</strong><span>Jump to service cards</span></div>
+            </a>
+            <a class="action-card" href="#contact">
+              <i class="fa-solid fa-location-dot"></i>
+              <div><strong>Contact details</strong><span>Phone and social links</span></div>
+            </a>
+          </div>
+
+          <div class="status-strip" aria-label="service stats">
+            <div class="status-item"><strong>24/7</strong><span>Availability</span></div>
+            <div class="status-item"><strong>6+</strong><span>Core services</span></div>
+            <div class="status-item"><strong>SA</strong><span>Coverage focus</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container">
+        <div class="trust-bar" aria-label="service assurances">
+          <div class="trust-item"><i class="fa-solid fa-bolt"></i><span>Rapid contact actions</span></div>
+          <div class="trust-item"><i class="fa-solid fa-mobile-screen-button"></i><span>Responsive on mobile</span></div>
+          <div class="trust-item"><i class="fa-solid fa-route"></i><span>Direct links to service pages</span></div>
+          <div class="trust-item"><i class="fa-solid fa-comments"></i><span>WhatsApp-first convenience</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Our services</h2>
+            <p>Search by keyword or use the category chips to filter the service cards. Each card includes direct actions and a service page link.</p>
+          </div>
+        </div>
+
+        <div class="search-panel">
+          <div class="search-row">
+            <label class="search-box" for="serviceSearch">
+              <span class="hidden-visually">Search services</span>
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input id="serviceSearch" type="search" placeholder="Search towing, fuel, tyre, courier..." autocomplete="off" />
+            </label>
+
+            <div class="filter-chips" role="tablist" aria-label="Service filters">
+              <button class="chip active" data-filter="all" type="button">All</button>
+              <button class="chip" data-filter="emergency" type="button">Emergency</button>
+              <button class="chip" data-filter="vehicle" type="button">Vehicle</button>
+              <button class="chip" data-filter="delivery" type="button">Delivery</button>
+            </div>
+          </div>
+          <div class="results-note" id="resultsNote">Showing all services.</div>
+        </div>
+
+        <div class="services-grid" id="servicesGrid">
+          <article class="service-card" data-category="emergency vehicle" data-keywords="towing tow recovery breakdown vehicle emergency roadside truck pull assist">
+            <div class="service-top">
+              <div style="display:flex; gap:1rem; align-items:flex-start;">
+                <div class="service-icon"><i class="fa-solid fa-truck"></i></div>
+                <div>
+                  <h3>Towing</h3>
+                  <p>Vehicle recovery and towing support for breakdowns and roadside incidents.</p>
+                </div>
+              </div>
+              <span class="badge"><i class="fa-solid fa-bolt"></i> Emergency</span>
+            </div>
+            <div class="service-meta">
+              <span><i class="fa-solid fa-clock"></i> 24/7 support</span>
+              <span><i class="fa-solid fa-link"></i> Dedicated page</span>
+            </div>
+            <div class="service-actions">
+              <a class="btn btn-primary" href="https://wa.me/27826300543?text=Hi%20Gravity%20Group%20RSA%2C%20I%20need%20help%20with%20towing." target="_blank" rel="noopener">Request help</a>
+              <a class="service-link" href="/services/towing.html">View service page <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article>
+
+          <article class="service-card" data-category="emergency vehicle" data-keywords="jumpstart battery jump start flat battery no power vehicle emergency roadside">
+            <div class="service-top">
+              <div style="display:flex; gap:1rem; align-items:flex-start;">
+                <div class="service-icon"><i class="fa-solid fa-car-battery"></i></div>
+                <div>
+                  <h3>Jumpstarts</h3>
+                  <p>Quick battery jumpstart assistance to get you moving again.</p>
+                </div>
+              </div>
+              <span class="badge"><i class="fa-solid fa-bolt"></i> Emergency</span>
+            </div>
+            <div class="service-meta">
+              <span><i class="fa-solid fa-car"></i> Vehicle support</span>
+              <span><i class="fa-solid fa-link"></i> Dedicated page</span>
+            </div>
+            <div class="service-actions">
+              <a class="btn btn-primary" href="https://wa.me/27826300543?text=Hi%20Gravity%20Group%20RSA%2C%20I%20need%20a%20jumpstart." target="_blank" rel="noopener">Request help</a>
+              <a class="service-link" href="/services/jumpstart.html">View service page <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article>
+
+          <article class="service-card" data-category="emergency vehicle" data-keywords="lockout locksmith key keys locked out locked vehicle door open emergency roadside">
+            <div class="service-top">
+              <div style="display:flex; gap:1rem; align-items:flex-start;">
+                <div class="service-icon"><i class="fa-solid fa-key"></i></div>
+                <div>
+                  <h3>Lockouts</h3>
+                  <p>Roadside lockout support and vehicle access assistance when keys are inaccessible.</p>
+                </div>
+              </div>
+              <span class="badge"><i class="fa-solid fa-bolt"></i> Emergency</span>
+            </div>
+            <div class="service-meta">
+              <span><i class="fa-solid fa-key"></i> Lockout support</span>
+              <span><i class="fa-solid fa-link"></i> Dedicated page</span>
+            </div>
+            <div class="service-actions">
+              <a class="btn btn-primary" href="https://wa.me/27826300543?text=Hi%20Gravity%20Group%20RSA%2C%20I%20am%20locked%20out%20of%20my%20vehicle." target="_blank" rel="noopener">Request help</a>
+              <a class="service-link" href="/services/locksmith.html">View service page <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article>
+
+          <article class="service-card" data-category="vehicle emergency" data-keywords="tyre tire flat puncture wheel tyre change vehicle roadside emergency">
+            <div class="service-top">
+              <div style="display:flex; gap:1rem; align-items:flex-start;">
+                <div class="service-icon"><i class="fa-solid fa-circle-notch"></i></div>
+                <div>
+                  <h3>Tyre Changes</h3>
+                  <p>On-site assistance for flat tyres and wheel-change support.</p>
+                </div>
+              </div>
+              <span class="badge"><i class="fa-solid fa-car"></i> Vehicle</span>
+            </div>
+            <div class="service-meta">
+              <span><i class="fa-solid fa-screwdriver-wrench"></i> Flat tyre help</span>
+              <span><i class="fa-solid fa-link"></i> Dedicated page</span>
+            </div>
+            <div class="service-actions">
+              <a class="btn btn-primary" href="https://wa.me/27826300543?text=Hi%20Gravity%20Group%20RSA%2C%20I%20need%20help%20with%20a%20tyre%20change." target="_blank" rel="noopener">Request help</a>
+              <a class="service-link" href="/services/tyre-change.html">View service page <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article>
+
+          <article class="service-card" data-category="vehicle delivery" data-keywords="fuel petrol diesel no fuel delivery vehicle roadside can refill emergency">
+            <div class="service-top">
+              <div style="display:flex; gap:1rem; align-items:flex-start;">
+                <div class="service-icon"><i class="fa-solid fa-gas-pump"></i></div>
+                <div>
+                  <h3>Fuel Delivery</h3>
+                  <p>Fast roadside fuel support when you are stranded without petrol or diesel.</p>
+                </div>
+              </div>
+              <span class="badge"><i class="fa-solid fa-droplet"></i> Mobile Delivery</span>
+            </div>
+            <div class="service-meta">
+              <span><i class="fa-solid fa-location-crosshairs"></i> On-site support</span>
+              <span><i class="fa-solid fa-link"></i> Dedicated page</span>
+            </div>
+            <div class="service-actions">
+              <a class="btn btn-primary" href="https://wa.me/27826300543?text=Hi%20Gravity%20Group%20RSA%2C%20I%20need%20fuel%20delivery." target="_blank" rel="noopener">Request help</a>
+              <a class="service-link" href="/services/fuel-delivery.html">View service page <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article>
+
+          <article class="service-card" data-category="delivery" data-keywords="courier parcel package delivery logistics same day road support courier solutions">
+            <div class="service-top">
+              <div style="display:flex; gap:1rem; align-items:flex-start;">
+                <div class="service-icon"><i class="fa-solid fa-box"></i></div>
+                <div>
+                  <h3>Courier Services</h3>
+                  <p>Courier and road-based delivery support for urgent logistics requirements.</p>
+                </div>
+              </div>
+              <span class="badge"><i class="fa-solid fa-box"></i> Logistics</span>
+            </div>
+            <div class="service-meta">
+              <span><i class="fa-solid fa-truck-fast"></i> Delivery support</span>
+              <span><i class="fa-solid fa-link"></i> Dedicated page</span>
+            </div>
+            <div class="service-actions">
+              <a class="btn btn-primary" href="https://wa.me/27826300543?text=Hi%20Gravity%20Group%20RSA%2C%20I%20need%20courier%20assistance." target="_blank" rel="noopener">Request help</a>
+              <a class="service-link" href="/services/courier-solutions.html">View service page <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="why-us">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Why this version is more user-friendly</h2>
+            <p>The homepage now supports quicker service discovery, stronger mobile usability and richer click actions for visitors who need urgent help.</p>
+          </div>
+        </div>
+
+        <div class="highlights-grid">
+          <article class="highlight-card">
+            <i class="fa-solid fa-mobile-screen"></i>
+            <h3>Responsive layout</h3>
+            <p>Grids, hero actions, navigation and service cards adapt cleanly from small screens to desktop displays.</p>
+          </article>
+          <article class="highlight-card">
+            <i class="fa-solid fa-bars-progress"></i>
+            <h3>Interactive navigation</h3>
+            <p>A sticky header, mobile menu, active section highlighting and anchored navigation reduce friction.</p>
+          </article>
+          <article class="highlight-card">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <h3>Live search and filters</h3>
+            <p>Visitors can search services by keyword and switch categories without page reloads.</p>
+          </article>
+          <article class="highlight-card">
+            <i class="fa-solid fa-link"></i>
+            <h3>Feature-rich actions</h3>
+            <p>Buttons route users to WhatsApp, phone calls, section anchors and service detail pages with prefilled intents.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="social">
+      <div class="container contact-wrap">
+        <article class="contact-card social-box">
+          <div>
+            <h2 style="margin:0;">Follow Gravity Group RSA</h2>
+            <p style="color:var(--muted); margin:.5rem 0 0;">Stay connected for updates, visuals and brand activity.</p>
+          </div>
+          <a class="social-handle" href="https://www.instagram.com/gravitygroupsouthafrica/" target="_blank" rel="noopener">
+            <i class="fa-brands fa-instagram"></i> @gravitygroupsouthafrica
+          </a>
+          <div class="qr-wrap">
+            <img src="https://raw.githubusercontent.com/Gravity-Group-RSA/www/refs/heads/main/assets/instagram.png" alt="Gravity Group RSA Instagram QR code" />
+          </div>
+          <a class="btn btn-secondary" href="https://www.facebook.com/gravitygrouprsa" target="_blank" rel="noopener"><i class="fa-brands fa-facebook"></i> Visit Facebook</a>
+        </article>
+
+        <article class="contact-card" id="contact">
+          <h2 style="margin:0;">Contact and support</h2>
+          <p style="color:var(--muted); margin:.5rem 0 0;">Use the options below for immediate assistance or general brand contact.</p>
+
+          <div class="contact-list">
+            <div class="contact-item">
+              <i class="fa-solid fa-phone"></i>
+              <div>
+                <strong>Call</strong><br />
+                <a href="tel:+27826300543">082 630 0543</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fa-brands fa-whatsapp"></i>
+              <div>
+                <strong>WhatsApp</strong><br />
+                <a href="https://wa.me/27826300543" target="_blank" rel="noopener">Start a chat</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fa-solid fa-earth-africa"></i>
+              <div>
+                <strong>Website</strong><br />
+                <a href="https://ggrsa.co.za/" target="_blank" rel="noopener">ggrsa.co.za</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-actions" style="margin-top:1.25rem;">
+            <a class="btn btn-primary" href="https://wa.me/27826300543?text=Hi%20Gravity%20Group%20RSA%2C%20I%20need%20roadside%20assistance." target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Emergency chat</a>
+            <a class="btn btn-secondary" href="tel:+27826300543"><i class="fa-solid fa-phone"></i> Call dispatch</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3>Gravity Group RSA</h3>
+          <p>24/7 roadside assistance with a cleaner navigation structure, responsive UI, functional service links and stronger mobile-first actions.</p>
+          <div class="social-links">
+            <a href="https://www.facebook.com/gravitygrouprsa" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/gravitygroupsouthafrica/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.me/27826300543" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Quick links</h4>
+          <div class="footer-links">
+            <a href="#services">Services</a>
+            <a href="#why-us">Why Us</a>
+            <a href="#social">Social</a>
+            <a href="#contact">Contact</a>
+            <a href="/services/index.html">All services page</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Direct support</h4>
+          <div class="footer-links">
+            <a href="tel:+27826300543">Call 082 630 0543</a>
+            <a href="https://wa.me/27826300543" target="_blank" rel="noopener">WhatsApp support</a>
+            <a href="/about.html">About Gravity Group RSA</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright">© <span id="year"></span> Gravity Group RSA. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script>
+    (() => {
+      const menuToggle = document.getElementById('menuToggle');
+      const mobilePanel = document.getElementById('mobilePanel');
+      const mobileLinks = mobilePanel ? mobilePanel.querySelectorAll('a') : [];
+      const year = document.getElementById('year');
+      const serviceSearch = document.getElementById('serviceSearch');
+      const chips = Array.from(document.querySelectorAll('.chip'));
+      const cards = Array.from(document.querySelectorAll('.service-card'));
+      const resultsNote = document.getElementById('resultsNote');
+      const backToTop = document.getElementById('backToTop');
+      const sectionLinks = document.querySelectorAll('[data-nav-link]');
+      const sections = ['services', 'why-us', 'social', 'contact']
+        .map(id => document.getElementById(id))
+        .filter(Boolean);
+
+      let activeFilter = 'all';
+
+      if (year) year.textContent = new Date().getFullYear();
+
+      if (menuToggle && mobilePanel) {
+        menuToggle.addEventListener('click', () => {
+          const isOpen = mobilePanel.classList.toggle('open');
+          menuToggle.setAttribute('aria-expanded', String(isOpen));
+          menuToggle.innerHTML = isOpen
+            ? '<i class="fa-solid fa-xmark"></i>'
+            : '<i class="fa-solid fa-bars"></i>';
+        });
+
+        mobileLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            mobilePanel.classList.remove('open');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+          });
+        });
+      }
+
+      function applyFilters() {
+        const term = (serviceSearch?.value || '').trim().toLowerCase();
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+          const categories = (card.dataset.category || '').toLowerCase();
+          const keywords = (card.dataset.keywords || '').toLowerCase();
+          const text = card.textContent.toLowerCase();
+
+          const matchesFilter = activeFilter === 'all' || categories.includes(activeFilter);
+          const matchesSearch = !term || keywords.includes(term) || text.includes(term);
+          const show = matchesFilter && matchesSearch;
+
+          card.hidden = !show;
+          if (show) visibleCount += 1;
+        });
+
+        if (resultsNote) {
+          if (!term && activeFilter === 'all') {
+            resultsNote.textContent = 'Showing all services.';
+          } else if (visibleCount === 0) {
+            resultsNote.textContent = 'No services matched your search. Try another keyword or filter.';
+          } else {
+            resultsNote.textContent = `Showing ${visibleCount} service${visibleCount === 1 ? '' : 's'}${term ? ` for “${term}”` : ''}${activeFilter !== 'all' ? ` in ${activeFilter}` : ''}.`;
+          }
+        }
+      }
+
+      chips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          activeFilter = chip.dataset.filter || 'all';
+          chips.forEach(c => c.classList.toggle('active', c === chip));
+          applyFilters();
+        });
+      });
+
+      serviceSearch?.addEventListener('input', applyFilters);
+      applyFilters();
+
+      window.addEventListener('scroll', () => {
+        const y = window.scrollY || window.pageYOffset;
+        if (backToTop) backToTop.classList.toggle('show', y > 420);
+      }, { passive: true });
+
+      backToTop?.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      if ('IntersectionObserver' in window && sections.length) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            const id = entry.target.id;
+            sectionLinks.forEach(link => {
+              const isActive = link.getAttribute('href') === `#${id}`;
+              link.classList.toggle('active', isActive);
+            });
+          });
+        }, { rootMargin: '-35% 0px -50% 0px', threshold: 0.01 });
+
+        sections.forEach(section => observer.observe(section));
+      }
+    })();
+  </script>
+</body>
+</html>
